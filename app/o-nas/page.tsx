@@ -12,29 +12,29 @@ export const metadata: Metadata = {
 
 const MILESTONES = [
   {
-    mark: "......",
-    title: "[DOPLNÍ KLIENT]",
-    text: "[DOPLNÍ KLIENT]",
+    mark: "14 let",
+    title: "Zámečnická krev v rodině",
+    text: "Poprvé chytil kleště do ruky jako brigádník po boku dědy — zkušeného zámečníka staré školy. Dílna, pilníky a zápach oceli se staly druhým domovem dřív, než stihl dokončit základní školu.",
   },
   {
-    mark: "......",
-    title: "[DOPLNÍ KLIENT]",
-    text: "[DOPLNÍ KLIENT]",
+    mark: "4 roky",
+    title: "Praxe po boku dědy",
+    text: "Čtyři roky reálných zakázek v Praze — mimo jiné pro KFC nebo místní masokombinát. Právě tady se ukázalo, kde je jeho silná stránka: broušení, kde záleží na milimetrech a trpělivosti.",
   },
   {
-    mark: "......",
-    title: "[DOPLNÍ KLIENT]",
-    text: "[DOPLNÍ KLIENT]",
+    mark: "18 let",
+    title: "První jiskra u svářečky",
+    text: "O prázdninách přišla první zkušenost se svařováním. Co začalo jako brigáda navíc, se rychle změnilo v řemeslo, kterému propadl — přesné, hlučné a nekompromisní k chybám.",
   },
   {
-    mark: "......",
-    title: "[DOPLNÍ KLIENT]",
-    text: "[DOPLNÍ KLIENT]",
+    mark: "10 let",
+    title: "Profesionální svářeč",
+    text: "Deset let praxe u svářečky dovedlo řemeslo do detailu — od tenkých nerezových plechů po masivní konstrukční profily. Přesnost přestala být cílem a stala se návykem.",
   },
   {
     mark: "Dnes",
     title: "Schovinox",
-    text: "[DOPLNÍ KLIENT]",
+    text: "Firma stavějící na generacích zkušeností — zámečnictví, kovovýroba, kooperace s dalšími firmami a vlastní řada grilovacích lavic. Stejná dílna, stejná pečlivost, jen větší rozsah zakázek.",
   },
 ];
 
