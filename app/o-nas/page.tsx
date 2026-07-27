@@ -19,7 +19,7 @@ const MILESTONES = [
   {
     mark: "4 roky",
     title: "Praxe po boku dědy",
-    text: "Čtyři roky reálných zakázek v Praze — mimo jiné pro KFC nebo místní masokombinát. Právě tady se ukázalo, kde je jeho silná stránka: broušení, kde záleží na milimetrech a trpělivosti.",
+    text: "Čtyři roky zakázek po celé republice — servis pro firmu KFC, potrubní trasy pro moštárny, výrobní zařízení pro masokombináty, vývoj zařízení pro farmaceutiku a mnoho dalšího. Ukázalo se, že rozhoduje zvolený postup, materiál a pevná ruka.",
   },
   {
     mark: "18 let",
@@ -27,14 +27,14 @@ const MILESTONES = [
     text: "O prázdninách přišla první zkušenost se svařováním. Co začalo jako brigáda navíc, se rychle změnilo v řemeslo, kterému propadl — přesné, hlučné a nekompromisní k chybám.",
   },
   {
-    mark: "10 let",
+    mark: "13 let",
     title: "Profesionální svářeč",
-    text: "Deset let praxe u svářečky dovedlo řemeslo do detailu — od tenkých nerezových plechů po masivní konstrukční profily. Přesnost přestala být cílem a stala se návykem.",
+    text: "Třináct let praxe u svářečky dovedlo řemeslo do detailu — od tenkých nerezových plechů po masivní konstrukční profily. Přesnost přestala být cílem a stala se návykem.",
   },
   {
     mark: "Dnes",
     title: "Schovinox",
-    text: "Firma stavějící na generacích zkušeností — zámečnictví, kovovýroba, kooperace s dalšími firmami a vlastní řada grilovacích lavic. Stejná dílna, stejná pečlivost, jen větší rozsah zakázek.",
+    text: "Firma stavějící na generacích zkušeností — zámečnictví, kovovýroba, kooperace s dalšími firmami a vlastní řada grilovacích Loren. Stejná dílna, stejná pečlivost, jen větší rozsah zakázek.",
   },
 ];
 

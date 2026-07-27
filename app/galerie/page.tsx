@@ -3,7 +3,7 @@ import GalleryGrid from "@/components/sections/GalleryGrid";
 
 export const metadata: Metadata = {
   title: "Galerie",
-  description: "Fotogalerie realizací Schovinox — zámečnictví, kovovýroba a grilovací lavice.",
+  description: "Fotogalerie realizací Schovinox — zámečnictví, kovovýroba a grilovací Lorny.",
 };
 
 export default function GaleriePage() {

@@ -6,9 +6,9 @@ import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
 
 export const metadata: Metadata = {
-  title: "Grilovací lavice",
+  title: "Grilovací Lorny",
   description:
-    "Ruční výroba grilovacích lavic na míru — ocelová konstrukce, odolný materiál, design šitý vaší zahradě.",
+    "Ruční výroba grilovacích Loren na míru — ocelová konstrukce, odolný materiál, design šitý vaší zahradě.",
 };
 
 const GALLERY = [
@@ -21,7 +21,7 @@ const GALLERY = [
     ratio: "1 / 1",
   },
   {
-    caption: "Varianta se stolem — grilovací lavice a stůl v jednom celku",
+    caption: "Varianta se stolem — grilovací Lorna a stůl v jednom celku",
     ratio: "4 / 3",
   },
   {
@@ -40,7 +40,7 @@ export default function GrilovaciLavicePage() {
               Vlastní produkt
             </span>
             <h1 className="mt-5 font-display text-4xl tracking-tight text-ink md:text-5xl">
-              Grilovací lavice, kterou svařujeme sami.
+              Grilovací Lorna, kterou svařujeme sami.
             </h1>
           </div>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-gray-500 md:col-span-4 md:mt-0">
@@ -114,7 +114,7 @@ export default function GrilovaciLavicePage() {
         <div className="container-page flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="font-display text-2xl tracking-tight md:text-3xl">
-              Mám zájem o grilovací lavici
+              Mám zájem o grilovací Lornu
             </h2>
             <p className="mt-2 max-w-md text-sm text-offwhite/60">
               Napište nám rozměry zahrady a představu — do 24 hodin se

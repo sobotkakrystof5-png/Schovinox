@@ -22,13 +22,13 @@ const TEASERS = [
   },
   {
     title: "Služby",
-    text: "Zámečnictví, kovovýroba, kooperace i výroba grilovacích lavic pod jednou střechou.",
+    text: "Zámečnictví, kovovýroba, kooperace i výroba grilovacích Loren pod jednou střechou.",
     href: "/sluzby",
     span: "md:col-span-5",
     ratio: "4 / 5",
   },
   {
-    title: "Grilovací lavice",
+    title: "Grilovací Lorny",
     text: "Vlastní produktová řada — ruční výroba, odolný materiál, design na míru vaší zahradě.",
     href: "/grilovaci-lavice",
     span: "md:col-span-5",
@@ -69,7 +69,7 @@ export default function HomePage() {
             <p className="mt-6 max-w-md text-base text-offwhite/70">
               Kov, přesnost a čtyřicet let rodinné zkušenosti — zámečnictví,
               zakázková kovovýroba, kooperace pro firmy a jedinečné grilovací
-              lavice.
+              Lorny.
             </p>
           </div>
 

@@ -1,7 +1,7 @@
 export type GalleryCategory =
   | "Zámečnictví"
   | "Kovovýroba"
-  | "Grilovací lavice"
+  | "Grilovací Lorny"
   | "Realizace";
 
 export type GalleryImage = {
@@ -13,7 +13,7 @@ export type GalleryImage = {
 const CATEGORIES: GalleryCategory[] = [
   "Zámečnictví",
   "Kovovýroba",
-  "Grilovací lavice",
+  "Grilovací Lorny",
   "Realizace",
 ];
 

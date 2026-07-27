@@ -50,7 +50,17 @@ Tohle neplatí jen pro velké změny. Platí to i pro drobné úpravy — krátc
 - **Cíl webu:** moderní, důvěryhodná prezentace přivádějící poptávky. Nesmí vypadat jako generický "AI web" — viz detailní pravidla originality v hlavním promptu projektu (`PROJECT-BRIEF.md` / `schovinox-prompt-pro-claude-code.md`).
 - **Tech stack:** Next.js (App Router) + TypeScript + Tailwind CSS + Framer Motion + Resend (kontaktní formulář) + mapa (Mapy.cz/Google Maps embed).
 - **Design:** červená (`#D62828`) + bílá/off-white + tmavý téměř-černý text. Střídmé použití červené jako akcentu. Vlastní grafická signatura (motiv inspirovaný svářením/kovoobráběním), asymetrické kompozice, žádné generické feature-card gridy, žádné placeholder fráze.
-- **Sekce webu:** Hero → O nás (příběh, timeline) → Služby → Grilovací lavice (produkt) → Projekty (6×) → Reference → Ceník → Galerie (20+ fotek) → Kontakt (mapa + formulář).
+- **Struktura webu — SKUTEČNÝ VÍCESTRÁNKOVÝ WEB, NE LANDING PAGE.** Každá položka v navbaru = samostatná stránka na vlastní URL, ne kotva na jedné dlouhé stránce. Klient se mezi sekcemi proklikává. Routy:
+  - `/` — Homepage (stručný přehled/rozcestník s teasery, ne plný obsah)
+  - `/o-nas` — příběh, timeline
+  - `/sluzby` — služby
+  - `/grilovaci-lavice` — produktová stránka
+  - `/projekty` — 6 realizací (případně `/projekty/[slug]` pro detail)
+  - `/reference` — reference/spolupráce
+  - `/cenik` — ceník
+  - `/galerie` — galerie (20+ fotek)
+  - `/kontakt` — mapa + kontaktní formulář
+- Toto je závazné pravidlo struktury — pokud budoucí prompt navrhne řešení jako scroll-jednostránku s kotvami, jde o rozpor s tímto zadáním a je nutné na to upozornit (viz sekce 5).
 - **Absolutní priorita:** originalita a řemeslná preciznost provedení, ne rychlé "hotovo".
 
 Plné zadání je v souboru `schovinox-prompt-pro-claude-code.md` v rootu projektu — při jakékoliv nejasnosti se k němu vracej jako ke zdroji pravdy, ne k vlastní domněnce.

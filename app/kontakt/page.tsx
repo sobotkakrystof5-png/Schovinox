@@ -8,7 +8,7 @@ import { SITE, INQUIRY_TYPES } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontaktujte Schovinox — nezávazná poptávka zámečnictví, kovovýroby, kooperace nebo grilovací lavice.",
+    "Kontaktujte Schovinox — nezávazná poptávka zámečnictví, kovovýroby, kooperace nebo grilovací Lorny.",
 };
 
 type KontaktPageProps = {

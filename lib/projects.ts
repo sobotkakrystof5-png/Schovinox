@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "projekt-6",
     title: "Projekt 6",
-    category: "Grilovací lavice",
+    category: "Grilovací Lorny",
     material: "......",
     location: "......",
     year: "....",

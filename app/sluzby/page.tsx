@@ -9,7 +9,7 @@ import WeldSeam from "@/components/ui/WeldSeam";
 export const metadata: Metadata = {
   title: "Služby",
   description:
-    "Zámečnictví, zakázková kovovýroba, kooperace pro firmy a výroba grilovacích lavic — čtyři obory, jedna dílna.",
+    "Zámečnictví, zakázková kovovýroba, kooperace pro firmy a výroba grilovacích Loren — čtyři obory, jedna dílna.",
 };
 
 const SERVICES = [
@@ -32,8 +32,8 @@ const SERVICES = [
     ratio: "4 / 3",
   },
   {
-    title: "Grilovací lavice",
-    text: "Vlastní produktová řada — grilovací lavice a sety vyráběné ručně na míru zahradě. Ocel odolná vůči teplu a povětrnosti, kombinovaná se dřevem.",
+    title: "Grilovací Lorny",
+    text: "Vlastní produktová řada — grilovací Lorny a sety vyráběné ručně na míru zahradě. Ocel odolná vůči teplu a povětrnosti, kombinovaná se dřevem.",
     href: "/grilovaci-lavice",
     ratio: "4 / 3",
     featured: true,
@@ -91,7 +91,7 @@ export default function SluzbyPage() {
                     href={service.href}
                     className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-red"
                   >
-                    {service.featured ? "Prohlédnout grilovací lavice" : "Zjistit více"}
+                    {service.featured ? "Prohlédnout grilovací Lorny" : "Zjistit více"}
                     <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
                   </Link>
                 </Reveal>

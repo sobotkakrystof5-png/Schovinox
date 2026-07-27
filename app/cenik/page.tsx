@@ -7,7 +7,7 @@ import WeldSeam from "@/components/ui/WeldSeam";
 export const metadata: Metadata = {
   title: "Ceník",
   description:
-    "Orientační ceník služeb Schovinox — zámečnictví, kovovýroba, kooperace a grilovací lavice.",
+    "Orientační ceník služeb Schovinox — zámečnictví, kovovýroba, kooperace a grilovací Lorny.",
 };
 
 const PRICE_GROUPS = [
@@ -35,7 +35,7 @@ const PRICE_GROUPS = [
     ],
   },
   {
-    category: "Grilovací lavice",
+    category: "Grilovací Lorny",
     items: [
       { label: "Základní model", price: "......" },
       { label: "S integrovaným stolem", price: "......" },

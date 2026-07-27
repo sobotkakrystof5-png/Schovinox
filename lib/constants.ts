@@ -6,7 +6,7 @@ export type NavItem = {
 export const NAV_ITEMS: NavItem[] = [
   { label: "O nás", href: "/o-nas" },
   { label: "Služby", href: "/sluzby" },
-  { label: "Grilovací lavice", href: "/grilovaci-lavice" },
+  { label: "Grilovací Lorny", href: "/grilovaci-lavice" },
   { label: "Projekty", href: "/projekty" },
   { label: "Reference", href: "/reference" },
   { label: "Ceník", href: "/cenik" },
@@ -38,6 +38,6 @@ export const INQUIRY_TYPES = [
   { value: "zamecnictvi", label: "Zámečnictví" },
   { value: "kovovyroba", label: "Kovovýroba" },
   { value: "kooperace", label: "Kooperace" },
-  { value: "grilovaci-lavice", label: "Grilovací lavice" },
+  { value: "grilovaci-lavice", label: "Grilovací Lorny" },
   { value: "jine", label: "Jiné" },
 ] as const;
