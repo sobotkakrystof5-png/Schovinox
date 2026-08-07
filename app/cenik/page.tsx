@@ -7,40 +7,21 @@ import WeldSeam from "@/components/ui/WeldSeam";
 export const metadata: Metadata = {
   title: "Ceník",
   description:
-    "Orientační ceník služeb Schovinox — zámečnictví, kovovýroba, kooperace a grilovací Lorny.",
+    "Ceník služeb Schovinox — jednotná hodinová sazba na zámečnictví, kovovýrobu a kooperaci, u větších zakázek cena předem.",
 };
 
-const PRICE_GROUPS = [
+const PRICE_ITEMS = [
   {
-    category: "Zámečnictví",
-    items: [
-      { label: "Výměna zámkové vložky", price: "......" },
-      { label: "Servis a seřízení kování", price: "......" },
-      { label: "Bezpečnostní dveře na míru", price: "......" },
-    ],
+    title: "Zámečnictví, kovovýroba, kooperace",
+    text: "Jednotná sazba bez ohledu na to, jde-li o vlastní výrobu, nebo kooperaci pro jinou firmu.",
+    price: "550 Kč",
+    unit: "/ hod",
   },
   {
-    category: "Kovovýroba",
-    items: [
-      { label: "Zakázková výroba dle výkresu", price: "......" },
-      { label: "Schodiště a zábradlí na míru", price: "......" },
-      { label: "Drobné opravy a úpravy", price: "......" },
-    ],
-  },
-  {
-    category: "Kooperace",
-    items: [
-      { label: "Subdodávky dle dokumentace", price: "......" },
-      { label: "Sériová výroba", price: "......" },
-    ],
-  },
-  {
-    category: "Grilovací Lorny",
-    items: [
-      { label: "Základní model", price: "......" },
-      { label: "S integrovaným stolem", price: "......" },
-      { label: "Rozšířený set s policemi", price: "......" },
-    ],
+    title: "Větší zakázky a projekty",
+    text: "Cenu stanovíme individuálně před zahájením prací, podle rozsahu, náročnosti a materiálu.",
+    price: "Předem",
+    unit: "",
   },
 ];
 
@@ -53,44 +34,44 @@ export default function CenikPage() {
             Ceník
           </span>
           <h1 className="mt-5 max-w-2xl font-display text-4xl tracking-tight text-ink md:text-5xl">
-            Orientační ceny, přesná kalkulace na míru.
+            Jasná sazba. Velké zakázky na míru.
           </h1>
           <p className="mt-5 max-w-lg text-sm text-gray-500">
-            Ceny níže jsou orientační — konečná nabídka vždy vychází z
-            konkrétní poptávky, rozsahu práce a materiálu.
+            Zámečnické práce, kovovýrobu i kooperaci účtujeme jednotnou
+            hodinovou sazbou. U větších zakázek stanovíme cenu předem, podle
+            rozsahu a náročnosti.
           </p>
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-20 md:py-28">
         <div className="container-page">
-          {PRICE_GROUPS.map((group, i) => (
-            <Reveal key={group.category} delay={i * 0.05}>
-              <div className="border-b border-ink/10 py-10 first:pt-0">
-                <div className="mb-6 flex items-center gap-4">
-                  <span className="font-display text-2xl text-red">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h2 className="font-display text-xl tracking-tight text-ink">
-                    {group.category}
-                  </h2>
-                </div>
-                <ul>
-                  {group.items.map((item) => (
-                    <li
-                      key={item.label}
-                      className="flex flex-col gap-1 border-t border-ink/5 py-3.5 first:border-t-0 sm:flex-row sm:items-baseline sm:justify-between"
-                    >
-                      <span className="text-sm text-ink/80">{item.label}</span>
-                      <span className="text-sm font-medium text-ink">
-                        {item.price}
+          <div className="mx-auto max-w-2xl divide-y divide-ink/10 border-y border-ink/10">
+            {PRICE_ITEMS.map((item, i) => (
+              <Reveal key={item.title} delay={i * 0.05}>
+                <div className="flex flex-col gap-4 py-10 sm:flex-row sm:items-baseline sm:justify-between sm:gap-10">
+                  <div>
+                    <h2 className="font-display text-base tracking-tight text-ink">
+                      {item.title}
+                    </h2>
+                    <p className="mt-2 max-w-sm text-sm leading-relaxed text-gray-500">
+                      {item.text}
+                    </p>
+                  </div>
+                  <div className="shrink-0 sm:text-right">
+                    <span className="font-display text-2xl tracking-tight text-ink">
+                      {item.price}
+                    </span>
+                    {item.unit && (
+                      <span className="ml-1.5 text-sm text-gray-500">
+                        {item.unit}
                       </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

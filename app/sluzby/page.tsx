@@ -34,7 +34,7 @@ const SERVICES = [
   {
     title: "Grilovací Lorny",
     text: "Vlastní produktová řada — grilovací Lorny a sety vyráběné ručně na míru zahradě. Ocel odolná vůči teplu a povětrnosti, kombinovaná se dřevem.",
-    href: "/grilovaci-lavice",
+    href: "/grilovaci-lavice/grilovaci-lorny",
     ratio: "4 / 3",
     featured: true,
   },

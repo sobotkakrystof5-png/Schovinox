@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import PlaceholderImage from "@/components/ui/PlaceholderImage";
+import ProjectDetailImage from "@/components/sections/ProjectDetailImage";
 import WeldSeam from "@/components/ui/WeldSeam";
 import { PROJECTS, getProjectBySlug } from "@/lib/projects";
 
@@ -54,10 +54,7 @@ export default function ProjektDetailPage({ params }: Props) {
       <section className="py-16">
         <div className="container-page grid gap-12 md:grid-cols-12">
           <div className="md:col-span-7">
-            <PlaceholderImage
-              label={`[FOTO: ${project.title}]`}
-              aspectRatio="4 / 3"
-            />
+            <ProjectDetailImage project={project} />
           </div>
           <div className="md:col-span-5">
             <WeldSeam className="mb-6 w-14 text-red" />

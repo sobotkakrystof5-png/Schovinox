@@ -30,7 +30,7 @@ const GALLERY = [
   },
 ];
 
-export default function GrilovaciLavicePage() {
+export default function GrilovaciLornyPage() {
   return (
     <>
       <section className="border-b border-ink/10 pt-32">
@@ -43,10 +43,6 @@ export default function GrilovaciLavicePage() {
               Grilovací Lorna, kterou svařujeme sami.
             </h1>
           </div>
-          <p className="mt-6 max-w-sm text-sm leading-relaxed text-gray-500 md:col-span-4 md:mt-0">
-            Ne katalogový výrobek z velkoskladu — ruční práce od zaměření
-            zahrady po finální lak.
-          </p>
         </div>
       </section>
 

@@ -32,7 +32,7 @@ export default function Header() {
         }`}
       >
         <div className="container-page flex h-20 items-center justify-between">
-          <Link href="/" className="font-display text-xl font-semibold tracking-tight">
+          <Link href="/" className="font-display text-2xl font-semibold tracking-tight">
             SCHOVINOX
           </Link>
 

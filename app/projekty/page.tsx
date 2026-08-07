@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import ProjectCard from "@/components/sections/ProjectCard";
-import Reveal from "@/components/ui/Reveal";
-import { PROJECTS } from "@/lib/projects";
+import ProjectsGrid from "@/components/sections/ProjectsGrid";
 
 export const metadata: Metadata = {
   title: "Projekty",
   description:
-    "Šest realizací Schovinox — schodiště, brány, kooperace, zábradlí, bezpečnostní dveře a grilovací sety na míru.",
+    "Sedm realizací Schovinox — kovovýroba a kooperace pro gastro provozy, mlékárny, hasičské zbrojnice a průmyslové zákazníky.",
 };
 
 export default function ProjektyPage() {
@@ -18,18 +16,14 @@ export default function ProjektyPage() {
             Realizace
           </span>
           <h1 className="mt-5 max-w-2xl font-display text-4xl tracking-tight text-ink md:text-5xl">
-            Šest zakázek, na kterých je vidět řemeslo.
+            Sedm zakázek, na kterých je vidět řemeslo.
           </h1>
         </div>
       </section>
 
       <section className="py-16">
-        <div className="container-page grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((project, i) => (
-            <Reveal key={project.slug} delay={(i % 3) * 0.06}>
-              <ProjectCard project={project} />
-            </Reveal>
-          ))}
+        <div className="container-page">
+          <ProjectsGrid />
         </div>
       </section>
     </>

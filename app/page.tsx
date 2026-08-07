@@ -30,7 +30,7 @@ const TEASERS = [
   {
     title: "Grilovací Lorny",
     text: "Vlastní produktová řada — ruční výroba, odolný materiál, design na míru vaší zahradě.",
-    href: "/grilovaci-lavice",
+    href: "/grilovaci-lavice/grilovaci-lorny",
     span: "md:col-span-5",
     ratio: "4 / 5",
   },
