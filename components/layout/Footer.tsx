@@ -6,22 +6,22 @@ export default function Footer() {
   return (
     <footer className="border-t border-ink/10 bg-ink text-offwhite">
       <WeldSeam className="opacity-70" />
-      <div className="container-page grid gap-12 py-16 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div className="container-page grid gap-14 py-20 md:grid-cols-[1.2fr_1fr_1fr] md:py-24">
         <div>
-          <span className="font-display text-2xl font-semibold tracking-tight">
+          <span className="font-display text-3xl font-semibold tracking-tight">
             SCHOVINOX
           </span>
-          <p className="mt-4 max-w-xs text-sm text-offwhite/60">
-            Zámečnictví, kovovýroba a svářečské řemeslo postavené na
-            generacích zkušeností.
+          <p className="mt-5 max-w-sm text-[0.95rem] leading-relaxed text-offwhite/60">
+            Zakázková kovovýroba, kooperace a svářečské řemeslo postavené
+            na generacích zkušeností.
           </p>
         </div>
 
         <div>
-          <h3 className="text-xs uppercase tracking-[0.18em] text-offwhite/40">
+          <h3 className="text-[0.7rem] uppercase tracking-[0.18em] text-offwhite/40">
             Mapa webu
           </h3>
-          <ul className="mt-4 space-y-2.5 text-sm">
+          <ul className="mt-5 space-y-3 text-[0.95rem]">
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="text-offwhite/75 hover:text-red">
@@ -33,10 +33,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-xs uppercase tracking-[0.18em] text-offwhite/40">
+          <h3 className="text-[0.7rem] uppercase tracking-[0.18em] text-offwhite/40">
             Kontakt
           </h3>
-          <ul className="mt-4 space-y-2.5 text-sm text-offwhite/75">
+          <ul className="mt-5 space-y-3 text-[0.95rem] text-offwhite/75">
             <li>
               <a href={SITE.phoneHref} className="hover:text-red">
                 {SITE.phone}
@@ -49,20 +49,35 @@ export default function Footer() {
             </li>
             <li>{SITE.address.full}</li>
           </ul>
-          <div className="mt-4 flex gap-4 text-sm">
-            <a href={SITE.social.facebook} className="text-offwhite/50 hover:text-red">
+          <div className="mt-5 flex gap-5 text-[0.95rem]">
+            <a
+              href={SITE.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-offwhite/50 hover:text-red"
+            >
               Facebook
-            </a>
-            <a href={SITE.social.instagram} className="text-offwhite/50 hover:text-red">
-              Instagram
             </a>
           </div>
         </div>
       </div>
 
-      <div className="container-page flex flex-col gap-2 border-t border-offwhite/10 py-6 text-xs text-offwhite/40 md:flex-row md:justify-between">
+      <div className="container-page flex flex-col gap-2 border-t border-offwhite/10 py-8 text-[0.8rem] text-offwhite/40 md:flex-row md:justify-between">
         <span>© {new Date().getFullYear()} Schovinox. Všechna práva vyhrazena.</span>
-        <span>IČO: ...... · ......</span>
+        <div className="flex flex-col gap-1 md:items-end">
+          <span>IČO: ...... · ......</span>
+          <span>
+            Vyrobeno{" "}
+            <a
+              href="https://www.vizeon.cz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-offwhite/60 hover:text-red"
+            >
+              Vizeon
+            </a>
+          </span>
+        </div>
       </div>
     </footer>
   );

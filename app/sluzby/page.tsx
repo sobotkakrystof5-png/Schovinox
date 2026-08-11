@@ -5,38 +5,34 @@ import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import SectionMark from "@/components/ui/SectionMark";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
+import { GRILL_PAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Služby",
   description:
-    "Zámečnictví, zakázková kovovýroba, kooperace pro firmy a výroba grilovacích Loren — čtyři obory, jedna dílna.",
+    "Zakázková kovovýroba a zámečnické práce, kooperace pro výrobní firmy a výroba produktů na grilování — tři obory, jedna dílna.",
 };
 
 const SERVICES = [
   {
-    title: "Zámečnictví",
-    text: "Výroba a opravy zámků, kování a bezpečnostních prvků — od jednoho vadného zámku po kompletní zabezpečení provozovny. Řešíme i urgentní zásahy, kdy se dovnitř nelze dostat.",
-    href: "/kontakt",
-    ratio: "4 / 3",
-  },
-  {
-    title: "Kovovýroba",
-    text: "Zakázková výroba podle vašeho návrhu nebo výkresu — schodiště, zábradlí, konstrukce i atypické díly. Od zaměření na místě přes výrobu v dílně až po montáž.",
-    href: "/kontakt",
+    title: "Zakázková kovovýroba",
+    text: "Výroba na míru podle vašeho návrhu, výkresu nebo jen popisu — konstrukce, zábradlí, schodiště, nerezové díly i atypické zámečnické práce. Od zaměření na místě přes výrobu v dílně až po montáž.",
+    href: "/kontakt?typ=kovovyroba",
     ratio: "4 / 3",
   },
   {
     title: "Kooperace",
     text: "Spolupráce s výrobními a strojírenskými firmami — subdodávky dílů, sériová výroba dle dokumentace, dlouhodobé partnerství s garantovanou kvalitou a termíny.",
-    href: "/kontakt",
+    href: "/kontakt?typ=kooperace",
     ratio: "4 / 3",
   },
   {
-    title: "Grilovací Lorny",
-    text: "Vlastní produktová řada — grilovací Lorny a sety vyráběné ručně na míru zahradě. Ocel odolná vůči teplu a povětrnosti, kombinovaná se dřevem.",
-    href: "/grilovaci-lavice/grilovaci-lorny",
+    title: "Výroba produktů na grilování",
+    text: "Vlastní produktová řada — grilovací Lorny, kulaté grily a grilovací rošty. Ruční výroba z broušeného potravinářského nerezu 1.4301, bez nátěrů a laků, design na míru vaší zahradě. Rozměry i uspořádání přizpůsobíme konkrétní poptávce.",
+    href: GRILL_PAGES[0].href,
     ratio: "4 / 3",
-    featured: true,
+    /** Místo jednoho odkazu vypíše všechny podstránky sekce Grilování (GRILL_PAGES). */
+    grillLinks: true,
   },
 ];
 
@@ -49,7 +45,7 @@ export default function SluzbyPage() {
             Služby
           </span>
           <h1 className="mt-5 max-w-2xl font-display text-4xl tracking-tight text-ink md:text-5xl">
-            Čtyři obory. Jedna dílna, jeden standard.
+            Tři obory. Jedna dílna, jeden standard.
           </h1>
         </div>
       </section>
@@ -87,13 +83,34 @@ export default function SluzbyPage() {
                   <p className="mt-4 max-w-md text-sm leading-relaxed text-gray-500">
                     {service.text}
                   </p>
-                  <Link
-                    href={service.href}
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-red"
-                  >
-                    {service.featured ? "Prohlédnout grilovací Lorny" : "Zjistit více"}
-                    <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
-                  </Link>
+                  {service.grillLinks ? (
+                    <ul className="mt-6 flex flex-col items-start gap-3">
+                      {GRILL_PAGES.map((page) => (
+                        <li key={page.href}>
+                          <Link
+                            href={page.href}
+                            className="inline-flex items-center gap-1.5 text-sm font-medium text-red"
+                          >
+                            {page.cta ?? `Prohlédnout ${page.label}`}
+                            <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
+                            {page.comingSoon && (
+                              <span className="ml-1 text-[10px] uppercase tracking-[0.15em] text-gray-500">
+                                Připravujeme
+                              </span>
+                            )}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <Link
+                      href={service.href}
+                      className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-red"
+                    >
+                      Zjistit více
+                      <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
+                    </Link>
+                  )}
                 </Reveal>
               </div>
             </section>

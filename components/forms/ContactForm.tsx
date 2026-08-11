@@ -9,11 +9,16 @@ import { INQUIRY_TYPES } from "@/lib/constants";
 
 type ContactFormProps = {
   defaultInquiryType?: (typeof INQUIRY_TYPES)[number]["value"];
+  /** Předvyplněná zpráva — např. konkrétní rozměr Lorny zvolený v ceníku. */
+  defaultMessage?: string;
 };
 
 type SubmitState = "idle" | "loading" | "success" | "error";
 
-export default function ContactForm({ defaultInquiryType }: ContactFormProps) {
+export default function ContactForm({
+  defaultInquiryType,
+  defaultMessage,
+}: ContactFormProps) {
   const [state, setState] = useState<SubmitState>("idle");
 
   const {
@@ -25,6 +30,7 @@ export default function ContactForm({ defaultInquiryType }: ContactFormProps) {
     resolver: zodResolver(contactSchema),
     defaultValues: {
       inquiryType: defaultInquiryType ?? "jine",
+      message: defaultMessage ?? "",
     },
   });
 

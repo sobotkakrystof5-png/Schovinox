@@ -27,14 +27,14 @@ const MILESTONES = [
     text: "O prázdninách přišla první zkušenost se svařováním. Co začalo jako brigáda navíc, se rychle změnilo v řemeslo, kterému propadl — přesné, hlučné a nekompromisní k chybám.",
   },
   {
-    mark: "13 let",
+    mark: "16 let",
     title: "Profesionální svářeč",
-    text: "Třináct let praxe u svářečky dovedlo řemeslo do detailu — od tenkých nerezových plechů po masivní konstrukční profily. Přesnost přestala být cílem a stala se návykem.",
+    text: "Šestnáct let praxe u svářečky dovedlo řemeslo do detailu — od tenkých nerezových plechů po masivní konstrukční profily. Přesnost přestala být cílem a stala se návykem.",
   },
   {
     mark: "Dnes",
     title: "Schovinox",
-    text: "Firma stavějící na generacích zkušeností — zámečnictví, kovovýroba, kooperace s dalšími firmami a vlastní řada grilovacích Loren. Stejná dílna, stejná pečlivost, jen větší rozsah zakázek.",
+    text: "Firma stavějící na generacích zkušeností — zakázková kovovýroba, kooperace s dalšími firmami a vlastní řada produktů na grilování. Stejná dílna, stejná pečlivost, jen větší rozsah zakázek.",
   },
 ];
 
@@ -74,10 +74,10 @@ export default function ONasPage() {
           <WeldSeam className="mb-10 w-16 text-red" />
           <Reveal>
             <blockquote className="max-w-3xl font-display text-2xl leading-snug tracking-tight md:text-3xl">
-              „[DOPLNÍ KLIENT]“
+              „Spojuji to, co má vydržet na věky, čistě, přesně a z nerezu.“
             </blockquote>
             <p className="mt-6 text-sm text-offwhite/50">
-              — Pan Schovánek, zakladatel Schovinox
+              — Dominik Schovánek, zakladatel Schovinox
             </p>
           </Reveal>
         </div>

@@ -7,12 +7,12 @@ import WeldSeam from "@/components/ui/WeldSeam";
 export const metadata: Metadata = {
   title: "Ceník",
   description:
-    "Ceník služeb Schovinox — jednotná hodinová sazba na zámečnictví, kovovýrobu a kooperaci, u větších zakázek cena předem.",
+    "Ceník služeb Schovinox — jednotná hodinová sazba na zakázkovou kovovýrobu, zámečnické práce a kooperaci, u větších zakázek cena předem.",
 };
 
 const PRICE_ITEMS = [
   {
-    title: "Zámečnictví, kovovýroba, kooperace",
+    title: "Zakázková kovovýroba a kooperace",
     text: "Jednotná sazba bez ohledu na to, jde-li o vlastní výrobu, nebo kooperaci pro jinou firmu.",
     price: "550 Kč",
     unit: "/ hod",
@@ -37,7 +37,7 @@ export default function CenikPage() {
             Jasná sazba. Velké zakázky na míru.
           </h1>
           <p className="mt-5 max-w-lg text-sm text-gray-500">
-            Zámečnické práce, kovovýrobu i kooperaci účtujeme jednotnou
+            Zakázkovou kovovýrobu i kooperaci účtujeme jednotnou
             hodinovou sazbou. U větších zakázek stanovíme cenu předem, podle
             rozsahu a náročnosti.
           </p>

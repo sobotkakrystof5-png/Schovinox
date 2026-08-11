@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     template: `%s — ${SITE.name}`,
   },
   description:
-    "Schovinox — zámečnictví, kovovýroba, kooperace a výroba grilovacích Loren. Řemeslo stavěné na generacích zkušeností.",
+    "Schovinox — zakázková kovovýroba a zámečnické práce, kooperace pro firmy a výroba produktů na grilování. Řemeslo stavěné na generacích zkušeností.",
   openGraph: {
     title: `${SITE.name} — ${SITE.tagline}`,
     description:
-      "Zámečnictví, kovovýroba, kooperace a grilovací Lorny na míru. Poctivé řemeslo s dlouholetou praxí.",
+      "Zakázková kovovýroba, kooperace pro firmy a produkty na grilování na míru. Poctivé řemeslo s dlouholetou praxí.",
     url: SITE.domain,
     siteName: SITE.name,
     locale: "cs_CZ",

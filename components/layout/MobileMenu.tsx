@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { X } from "lucide-react";
-import { useEffect } from "react";
+import { ChevronDown, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { NAV_ITEMS } from "@/lib/constants";
 
 type MobileMenuProps = {
@@ -14,6 +14,7 @@ type MobileMenuProps = {
 
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   const pathname = usePathname();
+  const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     if (open) {
@@ -28,6 +29,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
 
   useEffect(() => {
     onClose();
+    setExpanded(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
@@ -52,25 +54,76 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
 
           <nav className="container-page flex flex-1 flex-col justify-center gap-1 pb-20">
             {NAV_ITEMS.map((item, i) => {
-              const active = pathname === item.href;
+              const active =
+                pathname === item.href ||
+                (item.children?.some((child) => pathname === child.href) ?? false);
+              const hasChildren = Boolean(item.children?.length);
+              const isExpanded = expanded === item.href;
+
               return (
                 <motion.div
                   key={item.href}
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.35, delay: 0.05 * i }}
+                  className="border-b border-offwhite/10"
                 >
-                  <Link
-                    href={item.href}
-                    className={`flex items-baseline gap-3 border-b border-offwhite/10 py-4 font-display text-3xl ${
-                      active ? "text-red" : "text-offwhite"
-                    }`}
-                  >
+                  <div className="flex items-baseline gap-3 py-4">
                     <span className="text-sm text-offwhite/40">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    {item.label}
-                  </Link>
+                    <Link
+                      href={item.href}
+                      className={`font-display text-3xl ${active ? "text-red" : "text-offwhite"}`}
+                    >
+                      {item.label}
+                    </Link>
+                    {hasChildren && (
+                      <button
+                        type="button"
+                        onClick={() => setExpanded(isExpanded ? null : item.href)}
+                        aria-label={`${isExpanded ? "Skrýt" : "Zobrazit"} podstránky ${item.label}`}
+                        aria-expanded={isExpanded}
+                        className="ml-auto flex h-8 w-8 items-center justify-center text-offwhite/60"
+                      >
+                        <ChevronDown
+                          className={`h-5 w-5 transition-transform ${isExpanded ? "rotate-180" : ""}`}
+                        />
+                      </button>
+                    )}
+                  </div>
+
+                  {hasChildren && (
+                    <AnimatePresence>
+                      {isExpanded && (
+                        <motion.ul
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25 }}
+                          className="overflow-hidden pl-9"
+                        >
+                          {item.children?.map((child) => (
+                            <li key={child.href}>
+                              <Link
+                                href={child.href}
+                                className={`flex items-center justify-between gap-3 py-3 text-lg ${
+                                  pathname === child.href ? "text-red" : "text-offwhite/70"
+                                }`}
+                              >
+                                {child.label}
+                                {child.comingSoon && (
+                                  <span className="text-[10px] uppercase tracking-[0.15em] text-offwhite/40">
+                                    Připravujeme
+                                  </span>
+                                )}
+                              </Link>
+                            </li>
+                          ))}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
+                  )}
                 </motion.div>
               );
             })}

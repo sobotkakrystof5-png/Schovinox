@@ -6,10 +6,10 @@ import StatNumber from "@/components/ui/StatNumber";
 import Reveal from "@/components/ui/Reveal";
 
 const STATS = [
-  { value: "XX", label: "let praxe v oboru" },
-  { value: "XX", label: "dokončených realizací" },
-  { value: "XX %", label: "spokojených klientů" },
-  { value: "XX", label: "let pod značkou Schovinox" },
+  { value: 16, suffix: "", label: "let praxe v oboru" },
+  { value: 100, suffix: "+", label: "dokončených realizací" },
+  { value: 100, suffix: " %", label: "spokojených zákazníků" },
+  { value: 2, suffix: "", label: "roky pod značkou Schovinox" },
 ];
 
 const TEASERS = [
@@ -22,14 +22,14 @@ const TEASERS = [
   },
   {
     title: "Služby",
-    text: "Zámečnictví, kovovýroba, kooperace i výroba grilovacích Loren pod jednou střechou.",
+    text: "Zakázková kovovýroba, kooperace pro firmy i výroba produktů na grilování pod jednou střechou.",
     href: "/sluzby",
     span: "md:col-span-5",
     ratio: "4 / 5",
   },
   {
     title: "Grilovací Lorny",
-    text: "Vlastní produktová řada — ruční výroba, odolný materiál, design na míru vaší zahradě.",
+    text: "Vlastní produktová řada — ruční výroba z broušeného potravinářského nerezu 1.4301, design na míru vaší zahradě.",
     href: "/grilovaci-lavice/grilovaci-lorny",
     span: "md:col-span-5",
     ratio: "4 / 5",
@@ -61,15 +61,14 @@ export default function HomePage() {
         <div className="container-page relative z-10 grid gap-8 pb-20 pt-40 md:grid-cols-12">
           <div className="md:col-span-8 lg:col-span-7">
             <span className="text-xs uppercase tracking-[0.25em] text-red">
-              Zámečnictví · Kovovýroba · Svařování
+              Zámečnictví · Kovovýroba · Svařování · Broušení
             </span>
             <h1 className="mt-5 font-display text-5xl font-medium leading-[0.98] tracking-tight text-offwhite sm:text-6xl md:text-7xl">
               Řemeslo, které drží desetiletí.
             </h1>
             <p className="mt-6 max-w-md text-base text-offwhite/70">
-              Kov, přesnost a čtyřicet let rodinné zkušenosti — zámečnictví,
-              zakázková kovovýroba, kooperace pro firmy a jedinečné grilovací
-              Lorny.
+              Kov, přesnost a čtyřicet let rodinné zkušenosti — zakázková
+              kovovýroba, kooperace pro firmy a vlastní produkty na grilování.
             </p>
           </div>
 
@@ -98,7 +97,12 @@ export default function HomePage() {
         <WeldSeam className="text-ink/15" />
         <div className="container-page grid grid-cols-2 gap-x-6 gap-y-10 py-16 md:grid-cols-4">
           {STATS.map((stat) => (
-            <StatNumber key={stat.label} value={stat.value} label={stat.label} />
+            <StatNumber
+              key={stat.label}
+              value={stat.value}
+              suffix={stat.suffix}
+              label={stat.label}
+            />
           ))}
         </div>
       </section>

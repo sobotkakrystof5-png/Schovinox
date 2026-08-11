@@ -4,7 +4,7 @@ import ProjectsGrid from "@/components/sections/ProjectsGrid";
 export const metadata: Metadata = {
   title: "Projekty",
   description:
-    "Sedm realizací Schovinox — kovovýroba a kooperace pro gastro provozy, mlékárny, hasičské zbrojnice a průmyslové zákazníky.",
+    "Sedm realizací Schovinox — zakázková kovovýroba a kooperace pro gastro provozy, mlékárny, hasičské zbrojnice a průmyslové zákazníky.",
 };
 
 export default function ProjektyPage() {

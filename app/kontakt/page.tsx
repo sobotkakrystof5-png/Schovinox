@@ -4,21 +4,35 @@ import ContactForm from "@/components/forms/ContactForm";
 import WeldSeam from "@/components/ui/WeldSeam";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import { SITE, INQUIRY_TYPES } from "@/lib/constants";
+import { LORNA_VARIANTS } from "@/lib/lorny";
+import { GRIL_SLUG } from "@/lib/kulate-grily";
 
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontaktujte Schovinox — nezávazná poptávka zámečnictví, kovovýroby, kooperace nebo grilovací Lorny.",
+    "Kontaktujte Schovinox — nezávazná poptávka zakázkové kovovýroby, zámečnických prací, kooperace nebo produktů na grilování.",
 };
 
 type KontaktPageProps = {
-  searchParams: { typ?: string };
+  searchParams: { typ?: string; rozmer?: string; produkt?: string };
 };
 
 export default function KontaktPage({ searchParams }: KontaktPageProps) {
   const defaultInquiryType = INQUIRY_TYPES.find(
     (type) => type.value === searchParams.typ,
   )?.value;
+
+  // Předvyplnění z produktových stránek sekce Grilování — porovnáváme jen
+  // s hodnotami, které skutečně existují, aby se do formuláře nedal
+  // podstrčit libovolný text z URL.
+  const lornaVariant = LORNA_VARIANTS.find(
+    (variant) => variant.slug === searchParams.rozmer,
+  );
+  const defaultMessage = lornaVariant
+    ? `Dobrý den, mám zájem o grilovací Lornu v rozměru ${lornaVariant.size} mm.`
+    : searchParams.produkt === GRIL_SLUG
+      ? "Dobrý den, mám zájem o kulatý gril se zadním topeništěm (kompletní set)."
+      : undefined;
 
   return (
     <>
@@ -100,7 +114,10 @@ export default function KontaktPage({ searchParams }: KontaktPageProps) {
           <h2 className="mb-8 font-display text-2xl tracking-tight text-ink">
             Nezávazná poptávka
           </h2>
-          <ContactForm defaultInquiryType={defaultInquiryType} />
+          <ContactForm
+            defaultInquiryType={defaultInquiryType}
+            defaultMessage={defaultMessage}
+          />
         </div>
       </section>
     </>

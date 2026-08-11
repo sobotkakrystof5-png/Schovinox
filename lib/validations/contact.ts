@@ -1,7 +1,6 @@
 import { z } from "zod";
 
 export const inquiryTypeValues = [
-  "zamecnictvi",
   "kovovyroba",
   "kooperace",
   "grilovaci-lavice",

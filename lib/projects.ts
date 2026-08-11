@@ -14,7 +14,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "projekt-1",
     title: "Mycí stůl pro hasičskou zbrojnici",
-    category: "Kovovýroba",
+    category: "Zakázková kovovýroba",
     material: "......",
     location: "......",
     year: "....",
@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "projekt-2",
     title: "Stoly do gastro zařízení",
-    category: "Kovovýroba",
+    category: "Zakázková kovovýroba",
     material: "......",
     location: "......",
     year: "....",
@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "projekt-3",
     title: "CIP nádrže pro mlékárnu",
-    category: "Kovovýroba",
+    category: "Zakázková kovovýroba",
     material: "......",
     location: "......",
     year: "....",
@@ -73,7 +73,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "projekt-6",
     title: "Ohřevné vany se zásobníkem na vodu",
-    category: "Kovovýroba",
+    category: "Zakázková kovovýroba",
     material: "......",
     location: "......",
     year: "....",
@@ -85,7 +85,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "projekt-7",
     title: "Průlezy sila bioplynové stanice",
-    category: "Kovovýroba",
+    category: "Zakázková kovovýroba",
     material: "......",
     location: "......",
     year: "....",
