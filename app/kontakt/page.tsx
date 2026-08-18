@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/forms/ContactForm";
 import WeldSeam from "@/components/ui/WeldSeam";
-import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import { SITE, INQUIRY_TYPES } from "@/lib/constants";
 import { LORNA_VARIANTS } from "@/lib/lorny";
 import { GRIL_SLUG } from "@/lib/kulate-grily";
@@ -10,7 +9,7 @@ import { GRIL_SLUG } from "@/lib/kulate-grily";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontaktujte Schovinox — nezávazná poptávka zakázkové kovovýroby, zámečnických prací, kooperace nebo produktů na grilování.",
+    "Kontaktujte Schovinox: nezávazná poptávka zakázkové kovovýroby, zámečnických prací, kooperace nebo produktů na grilování.",
 };
 
 type KontaktPageProps = {
@@ -21,6 +20,10 @@ export default function KontaktPage({ searchParams }: KontaktPageProps) {
   const defaultInquiryType = INQUIRY_TYPES.find(
     (type) => type.value === searchParams.typ,
   )?.value;
+
+  const mapQuery = encodeURIComponent(
+    `${SITE.address.street}, ${SITE.address.zip} ${SITE.address.city}`,
+  );
 
   // Předvyplnění z produktových stránek sekce Grilování — porovnáváme jen
   // s hodnotami, které skutečně existují, aby se do formuláře nedal
@@ -100,11 +103,15 @@ export default function KontaktPage({ searchParams }: KontaktPageProps) {
           </div>
 
           <div className="md:col-span-7">
-            <PlaceholderImage
-              label="[MAPA: doplní se po zadání reálné adresy]"
-              aspectRatio="auto"
-              className="h-full min-h-[320px] w-full"
-            />
+            <div className="h-full min-h-[320px] w-full overflow-hidden border border-ink/10">
+              <iframe
+                src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+                title={`Mapa – provozovna Schovinox, ${SITE.address.full}`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full min-h-[320px] w-full border-0"
+              />
+            </div>
           </div>
         </div>
       </section>

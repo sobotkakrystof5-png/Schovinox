@@ -14,7 +14,7 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
       <button
         type="button"
         onClick={onImageClick}
-        aria-label={`Zvětšit fotku — ${project.title}`}
+        aria-label={`Zvětšit fotku: ${project.title}`}
         className="relative block w-full overflow-hidden text-left"
       >
         <div className="relative w-full" style={{ aspectRatio: "4 / 3" }}>

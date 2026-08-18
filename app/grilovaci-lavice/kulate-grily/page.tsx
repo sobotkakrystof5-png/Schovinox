@@ -18,13 +18,13 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Kulaté grily",
   description:
-    "Nerezový kulatý gril se zadním topeništěm — Ø 475 × 750 mm, plášť 2,5 mm, potravinářský nerez 1.4301. Kompletní set s motorkem, jehlou a stolečkem za 27 000 Kč.",
+    "Nerezový kulatý gril se zadním topeništěm: Ø 475 × 750 mm, plášť 2,5 mm, potravinářský nerez 1.4301. Kompletní set s motorkem, jehlou a stolečkem za 27 000 Kč.",
 };
 
 const FEATURES = [
   {
     title: "Ruční výroba",
-    text: "Každý gril svařujeme a brousíme ručně v naší dílně — kus po kuse, žádná sériová výroba na lince.",
+    text: "Každý gril svařujeme a brousíme ručně v naší dílně, kus po kuse. Žádná sériová výroba na lince.",
   },
   {
     title: "Potravinářský nerez 1.4301",
@@ -32,7 +32,7 @@ const FEATURES = [
   },
   {
     title: "Kompletní set",
-    text: "Gril dodáváme připravený k použití — motorek, jehla se čtyřmi napichováky, odkapový plech i odkládací stoleček jsou v ceně.",
+    text: "Gril dodáváme připravený k použití: motorek, jehla se čtyřmi napichováky, odkapový plech i odkládací stoleček jsou v ceně.",
   },
 ];
 
@@ -50,7 +50,7 @@ const CRAFT = [
   {
     label: "Pohon",
     value: "Nerezový motorek na 50 kg",
-    text: "Nosnost je schválně nadsazená — jehla z dvanáctimilimetrové kulatiny se protočí i naplno naložená a motorek se nezadrhne.",
+    text: "Nosnost je schválně nadsazená: jehla z dvanáctimilimetrové kulatiny se protočí i naplno naložená a motorek se nezadrhne.",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function KulateGrilyPage() {
           </div>
           <div className="md:col-span-5 md:pb-2">
             <p className="max-w-md text-sm leading-relaxed text-gray-500">
-              Nerezový gril na rožnění v jediném provedení — motorek, jehla
+              Nerezový gril na rožnění v jediném provedení: motorek, jehla
               i odkládací stoleček jsou součástí ceny.
             </p>
             <a
@@ -132,7 +132,7 @@ export default function KulateGrilyPage() {
 
             <div className="md:col-span-7">
               <p className="text-base leading-relaxed text-ink">
-                Kulatý gril je náš vlastní produkt — nerezový gril na rožnění
+                Kulatý gril je náš vlastní produkt, nerezový gril na rožnění
                 s topeništěm vzadu, který u nás vzniká od prvního řezu po
                 poslední svar.
               </p>
@@ -140,7 +140,7 @@ export default function KulateGrilyPage() {
                 Vyrábíme ho z potravinářského nerezu s označením 1.4301. Ten
                 snese přímý kontakt s jídlem, nekoroduje a vydrží venku i bez
                 povrchové úpravy. Na rozdíl od Loren se kulatý gril prodává
-                v jediném provedení — jako kompletní set, ve kterém na sebe
+                v jediném provedení: jako kompletní set, ve kterém na sebe
                 všechny díly pasují a nic se nedokupuje.
               </p>
 
@@ -231,7 +231,7 @@ export default function KulateGrilyPage() {
             </p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-gray-500">
               Cena je za kompletní set včetně DPH. Gril vyrábíme v jednom
-              standardním provedení — vlastní úpravy naceníme individuálně
+              standardním provedení. Vlastní úpravy naceníme individuálně
               po poptávce.
             </p>
 
@@ -243,7 +243,7 @@ export default function KulateGrilyPage() {
               Mám zájem
             </a>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-500">
-              Tlačítko otevře e-mail s předvyplněnou objednávkou — stačí
+              Tlačítko otevře e-mail s předvyplněnou objednávkou, stačí
               doplnit počet kusů a odeslat.
             </p>
 
@@ -305,7 +305,7 @@ export default function KulateGrilyPage() {
               Mám zájem o kulatý gril
             </h2>
             <p className="mt-2 max-w-md text-sm text-offwhite/60">
-              Tlačítko otevře e-mail s předvyplněnou objednávkou — doplňte
+              Tlačítko otevře e-mail s předvyplněnou objednávkou: doplňte
               počet kusů a dřevo na stoleček, do 24 hodin se ozveme s termínem.
             </p>
           </div>

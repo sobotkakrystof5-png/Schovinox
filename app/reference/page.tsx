@@ -8,7 +8,7 @@ import { TESTIMONIALS } from "@/lib/testimonials";
 export const metadata: Metadata = {
   title: "Reference",
   description:
-    "Reference od zákazníků Schovinox — napsané těmi, pro které jsme dělali, ne námi.",
+    "Reference od zákazníků Schovinox, napsané těmi, pro které jsme dělali, ne námi.",
 };
 
 export default function ReferencePage() {
@@ -24,7 +24,7 @@ export default function ReferencePage() {
           </h1>
           <p className="mt-5 max-w-lg text-sm text-gray-500">
             Žádné vymyšlené citace ani cizí loga. Každou referenci na této
-            stránce napsal skutečný zákazník — a než se tu objeví, ručně si ji
+            stránce napsal skutečný zákazník. Než se tu objeví, ručně si ji
             projdeme.
           </p>
         </div>

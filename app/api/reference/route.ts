@@ -65,7 +65,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: fromAddress,
       to: toAddress,
-      subject: `Nová reference k posouzení — ${name}`,
+      subject: `Nová reference k posouzení: ${name}`,
       text: [
         `Jméno: ${name}`,
         `Firma: ${company || "neuvedeno"}`,

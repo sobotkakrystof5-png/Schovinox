@@ -7,7 +7,7 @@ import WeldSeam from "@/components/ui/WeldSeam";
 export const metadata: Metadata = {
   title: "Ceník",
   description:
-    "Ceník služeb Schovinox — jednotná hodinová sazba na zakázkovou kovovýrobu, zámečnické práce a kooperaci, u větších zakázek cena předem.",
+    "Ceník služeb Schovinox: jednotná hodinová sazba na zakázkovou kovovýrobu, zámečnické práce a kooperaci, u větších zakázek cena předem.",
 };
 
 const PRICE_ITEMS = [

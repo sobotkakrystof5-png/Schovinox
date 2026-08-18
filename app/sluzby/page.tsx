@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import SectionMark from "@/components/ui/SectionMark";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
@@ -10,27 +10,33 @@ import { GRILL_PAGES } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Služby",
   description:
-    "Zakázková kovovýroba a zámečnické práce, kooperace pro výrobní firmy a výroba produktů na grilování — tři obory, jedna dílna.",
+    "Zakázková kovovýroba a zámečnické práce, kooperace pro výrobní firmy a výroba produktů na grilování. Tři obory, jedna dílna.",
 };
 
 const SERVICES = [
   {
     title: "Zakázková kovovýroba",
-    text: "Výroba na míru podle vašeho návrhu, výkresu nebo jen popisu — konstrukce, zábradlí, schodiště, nerezové díly i atypické zámečnické práce. Od zaměření na místě přes výrobu v dílně až po montáž.",
+    text: "Výroba na míru podle vašeho návrhu, výkresu nebo jen popisu: konstrukce, zábradlí, schodiště, nerezové díly i atypické zámečnické práce. Od zaměření na místě přes výrobu v dílně až po montáž.",
     href: "/kontakt?typ=kovovyroba",
     ratio: "4 / 3",
+    image: "/sluzby/zakazkova-vyroba.jpeg",
+    alt: "Zakázkově vyrobený nerezový díl s přivařenými výztuhami zavěšený na jeřábovém háku v dílně",
   },
   {
     title: "Kooperace",
-    text: "Spolupráce s výrobními a strojírenskými firmami — subdodávky dílů, sériová výroba dle dokumentace, dlouhodobé partnerství s garantovanou kvalitou a termíny.",
+    text: "Spolupráce s výrobními a strojírenskými firmami: subdodávky dílů, sériová výroba dle dokumentace, dlouhodobé partnerství s garantovanou kvalitou a termíny.",
     href: "/kontakt?typ=kooperace",
     ratio: "4 / 3",
+    image: "/sluzby/kooperace.jpeg",
+    alt: "Série stejných ohýbaných nerezových trubkových dílů vyrobených v rámci subdodávky",
   },
   {
     title: "Výroba produktů na grilování",
-    text: "Vlastní produktová řada — grilovací Lorny, kulaté grily a grilovací rošty. Ruční výroba z broušeného potravinářského nerezu 1.4301, bez nátěrů a laků, design na míru vaší zahradě. Rozměry i uspořádání přizpůsobíme konkrétní poptávce.",
+    text: "Vlastní produktová řada: grilovací Lorny, kulaté grily a grilovací rošty. Ruční výroba z broušeného potravinářského nerezu 1.4301, bez nátěrů a laků, design na míru vaší zahradě. Rozměry i uspořádání přizpůsobíme konkrétní poptávce.",
     href: GRILL_PAGES[0].href,
     ratio: "4 / 3",
+    image: "/sluzby/vyroba-grilovacich-produktu.jpeg",
+    alt: "Otevřený nerezový kulatý gril zepředu — otočná jehla s napichováky nad odkapovým plechem",
     /** Místo jednoho odkazu vypíše všechny podstránky sekce Grilování (GRILL_PAGES). */
     grillLinks: true,
   },
@@ -65,10 +71,18 @@ export default function SluzbyPage() {
                     reversed ? "md:order-2 md:col-start-8" : "md:col-start-1"
                   }`}
                 >
-                  <PlaceholderImage
-                    label={`[FOTO: ${service.title}]`}
-                    aspectRatio={service.ratio}
-                  />
+                  <div
+                    className="relative overflow-hidden border border-ink/10"
+                    style={{ aspectRatio: service.ratio }}
+                  >
+                    <Image
+                      src={service.image}
+                      alt={service.alt}
+                      fill
+                      sizes="(min-width: 768px) 40vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
 
                 <Reveal

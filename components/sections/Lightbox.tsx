@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useCallback } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Camera } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import type { GalleryImage } from "@/lib/gallery";
 
 type LightboxProps = {
@@ -80,15 +81,20 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Lightbo
             onClick={(e) => e.stopPropagation()}
             className="flex max-h-[80vh] w-full max-w-2xl flex-col items-center"
           >
-            <div
-              className="flex w-full max-h-[70vh] items-center justify-center border border-offwhite/15 bg-ink/40"
-              style={{ aspectRatio: current.ratio }}
-            >
-              <Camera className="h-10 w-10 text-offwhite/25" strokeWidth={1.25} />
+            <div className="relative h-[70vh] w-full border border-offwhite/15">
+              <Image
+                src={current.src}
+                alt={current.alt}
+                fill
+                sizes="(min-width: 768px) 80vw, 100vw"
+                className="object-contain"
+              />
             </div>
-            <p className="mt-4 text-sm text-offwhite/50">
-              [FOTO {current.id}] — {current.category} · {index! + 1} /{" "}
-              {images.length}
+            <p className="mt-4 text-center text-sm text-offwhite/50">
+              {current.alt}
+              <span className="ml-2 text-offwhite/35">
+                {index! + 1} / {images.length}
+              </span>
             </p>
           </motion.div>
 

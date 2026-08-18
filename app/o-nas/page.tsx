@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PlaceholderImage from "@/components/ui/PlaceholderImage";
+import Image from "next/image";
 import Timeline from "@/components/sections/Timeline";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
@@ -7,34 +7,34 @@ import WeldSeam from "@/components/ui/WeldSeam";
 export const metadata: Metadata = {
   title: "Náš příběh",
   description:
-    "Od brigády u dědy zámečníka po profesionální svařování — příběh Schovinox napříč třemi generacemi řemesla.",
+    "Od brigády u dědy zámečníka po profesionální svařování: příběh Schovinox napříč třemi generacemi řemesla.",
 };
 
 const MILESTONES = [
   {
     mark: "14 let",
     title: "Zámečnická krev v rodině",
-    text: "Poprvé chytil kleště do ruky jako brigádník po boku dědy — zkušeného zámečníka staré školy. Dílna, pilníky a zápach oceli se staly druhým domovem dřív, než stihl dokončit základní školu.",
+    text: "Poprvé chytil kleště do ruky jako brigádník po boku dědy, zkušeného zámečníka staré školy. Dílna, pilníky a zápach oceli se staly druhým domovem dřív, než stihl dokončit základní školu.",
   },
   {
     mark: "4 roky",
     title: "Praxe po boku dědy",
-    text: "Čtyři roky zakázek po celé republice — servis pro firmu KFC, potrubní trasy pro moštárny, výrobní zařízení pro masokombináty, vývoj zařízení pro farmaceutiku a mnoho dalšího. Ukázalo se, že rozhoduje zvolený postup, materiál a pevná ruka.",
+    text: "Čtyři roky zakázek po celé republice: servis pro firmu KFC, potrubní trasy pro moštárny, výrobní zařízení pro masokombináty, vývoj zařízení pro farmaceutiku a mnoho dalšího. Ukázalo se, že rozhoduje zvolený postup, materiál a pevná ruka.",
   },
   {
     mark: "18 let",
     title: "První jiskra u svářečky",
-    text: "O prázdninách přišla první zkušenost se svařováním. Co začalo jako brigáda navíc, se rychle změnilo v řemeslo, kterému propadl — přesné, hlučné a nekompromisní k chybám.",
+    text: "O prázdninách přišla první zkušenost se svařováním. Co začalo jako brigáda navíc, se rychle změnilo v řemeslo, kterému propadl: přesné, hlučné a nekompromisní k chybám.",
   },
   {
     mark: "16 let",
     title: "Profesionální svářeč",
-    text: "Šestnáct let praxe u svářečky dovedlo řemeslo do detailu — od tenkých nerezových plechů po masivní konstrukční profily. Přesnost přestala být cílem a stala se návykem.",
+    text: "Šestnáct let praxe u svářečky dovedlo řemeslo do detailu: od tenkých nerezových plechů po masivní konstrukční profily. Přesnost přestala být cílem a stala se návykem.",
   },
   {
     mark: "Dnes",
     title: "Schovinox",
-    text: "Firma stavějící na generacích zkušeností — zakázková kovovýroba, kooperace s dalšími firmami a vlastní řada produktů na grilování. Stejná dílna, stejná pečlivost, jen větší rozsah zakázek.",
+    text: "Firma stavějící na generacích zkušeností: zakázková kovovýroba, kooperace s dalšími firmami a vlastní řada produktů na grilování. Stejná dílna, stejná pečlivost, jen větší rozsah zakázek.",
   },
 ];
 
@@ -60,10 +60,15 @@ export default function ONasPage() {
 
           <div className="md:col-span-5">
             <div className="md:sticky md:top-28">
-              <PlaceholderImage
-                label="[FOTO: Portrét pana Schovánka při práci v dílně]"
-                aspectRatio="4 / 5"
-              />
+              <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink/10">
+                <Image
+                  src="/o-nas-portret.jpeg"
+                  alt="Pan Schovánek při TIG svařování nerezové nádrže v dílně, se svářečskou kuklou a v rukavicích"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -77,7 +82,7 @@ export default function ONasPage() {
               „Spojuji to, co má vydržet na věky, čistě, přesně a z nerezu.“
             </blockquote>
             <p className="mt-6 text-sm text-offwhite/50">
-              — Dominik Schovánek, zakladatel Schovinox
+              - Dominik Schovánek, zakladatel Schovinox
             </p>
           </Reveal>
         </div>

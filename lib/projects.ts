@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
     year: "....",
     summary: "Mycí stůl na míru pro hasičskou zbrojnici.",
     description:
-      "Výroba mycího stolu na míru pro hasičskou zbrojnici — řešení šité přesně na provozní potřeby jednotky.",
+      "Výroba mycího stolu na míru pro hasičskou zbrojnici, řešení šité přesně na provozní potřeby jednotky.",
     image: "/projekty/projekt-1.jpeg",
   },
   {
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     year: "....",
     summary: "Pracovní stoly na míru pro gastro provoz.",
     description:
-      "Výroba pracovních stolů do gastro zařízení — odolné provedení navržené na denní zátěž profesionální kuchyně.",
+      "Výroba pracovních stolů do gastro zařízení: odolné provedení navržené na denní zátěž profesionální kuchyně.",
     image: "/projekty/projekt-2.jpeg",
   },
   {
@@ -44,24 +44,24 @@ export const PROJECTS: Project[] = [
     year: "....",
     summary: "CIP nádrže pro mlékárenský provoz.",
     description:
-      "Výroba CIP nádrží pro mlékárnu — zakázka pro potravinářský provoz s vysokými nároky na čistotu a přesnost svarů.",
+      "Výroba CIP nádrží pro mlékárnu. Zakázka pro potravinářský provoz s vysokými nároky na čistotu a přesnost svarů.",
     image: "/projekty/projekt-3.jpeg",
   },
   {
     slug: "projekt-4",
-    title: "Kooperace pro firmu Nirosta — svařování nádrží",
+    title: "Kooperace pro firmu Nirosta: svařování nádrží",
     category: "Kooperace",
     material: "......",
     location: "......",
     year: "....",
     summary: "Svařování nádrží a kompletace druhého pláště pro Nirosta.",
     description:
-      "Kooperace pro firmu Nirosta — svařování nádrží a kompletace druhého pláště v rámci dodavatelské spolupráce.",
+      "Svařování nádrží a kompletace druhého pláště pro firmu Nirosta v rámci dodavatelské spolupráce.",
     image: "/projekty/projekt-4.jpeg",
   },
   {
     slug: "projekt-5",
-    title: "Kooperace — výroba míchadel",
+    title: "Kooperace na výrobě míchadel",
     category: "Kooperace",
     material: "......",
     location: "......",
@@ -79,7 +79,7 @@ export const PROJECTS: Project[] = [
     year: "....",
     summary: "Ohřevné vany se zásobníkem vody pro gastro provoz.",
     description:
-      "Výroba ohřevných van se zásobníkem na vodu pro gastro zařízení — funkční řešení na míru provozním potřebám kuchyně.",
+      "Ohřevné vany se zásobníkem na vodu pro gastro zařízení jsme navrhli jako funkční řešení na míru provozním potřebám kuchyně.",
     image: "/projekty/projekt-6.jpeg",
   },
   {
@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
     year: "....",
     summary: "Tři průlezy sila pro bioplynovou stanici.",
     description:
-      "Výroba tří kusů průlezů sila pro bioplynovou stanici — přesná zakázková výroba pro technologický provoz.",
+      "Tři kusy průlezů sila pro bioplynovou stanici, přesná zakázková výroba pro technologický provoz.",
     image: "/projekty/projekt-7.jpeg",
   },
 ];

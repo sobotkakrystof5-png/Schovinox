@@ -13,13 +13,13 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Grilovací Lorny",
   description:
-    "Grilovací Lorny z potravinářského nerezu 1.4301 — plech síly 2 mm, kartáčovaný povrch, mořené sváry. Šest rozměrů s jasnými cenami, design na míru.",
+    "Grilovací Lorny z potravinářského nerezu 1.4301: plech síly 2 mm, kartáčovaný povrch, mořené sváry. Šest rozměrů s jasnými cenami, design na míru.",
 };
 
 const FEATURES = [
   {
     title: "Ruční výroba",
-    text: "Každou Lornu svařujeme a brousíme ručně v naší dílně — kus po kuse, žádná sériová výroba na lince.",
+    text: "Každou Lornu svařujeme a brousíme ručně v naší dílně, kus po kuse. Žádná sériová výroba na lince.",
   },
   {
     title: "Potravinářský nerez 1.4301",
@@ -35,7 +35,7 @@ const CRAFT = [
   {
     label: "Materiál",
     value: "Plech síly 2 mm",
-    text: "Lorny řežeme z dvoumilimetrového nerezového plechu. Tenčí materiál se žárem časem zkroutí — dvojka drží tvar i po letech nad ohněm.",
+    text: "Lorny řežeme z dvoumilimetrového nerezového plechu. Tenčí materiál se žárem časem zkroutí, dvojka drží tvar i po letech nad ohněm.",
   },
   {
     label: "Povrch",
@@ -45,7 +45,7 @@ const CRAFT = [
   {
     label: "Sváry",
     value: "Mořené kyselinou",
-    text: "Každý svár mořený kyselinou. Moření sundá náběhové barvy kolem svaru a obnoví pasivní vrstvu nerezu — přesně tam by jinak koroze začala nejdřív.",
+    text: "Každý svár mořený kyselinou. Moření sundá náběhové barvy kolem svaru a obnoví pasivní vrstvu nerezu, přesně tam, kde by jinak koroze začala nejdřív.",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function GrilovaciLornyPage() {
           </div>
           <div className="md:col-span-5 md:pb-2">
             <p className="max-w-md text-sm leading-relaxed text-gray-500">
-              Nerezový gril z vlastní dílny — šest standardních rozměrů
+              Nerezový gril z vlastní dílny: šest standardních rozměrů
               s jasnou cenou a možnost nechat si udělat vlastní.
             </p>
             <a
@@ -139,14 +139,14 @@ export default function GrilovaciLornyPage() {
 
             <div className="md:col-span-7">
               <p className="text-base leading-relaxed text-ink">
-                Grilovací Lorna je náš vlastní produkt — nerezový gril, který
+                Grilovací Lorna je náš vlastní produkt, nerezový gril, který
                 u nás vzniká od prvního řezu po poslední svar.
               </p>
               <p className="mt-5 text-sm leading-relaxed text-gray-500">
                 Všechny Lorny vyrábíme z potravinářského nerezu s označením
                 1.4301. Ten snese přímý kontakt s jídlem, nekoroduje a vydrží
                 venku i bez povrchové úpravy. Rozměry i uspořádání
-                přizpůsobíme konkrétní poptávce — a pokud máte vlastní
+                přizpůsobíme konkrétní poptávce. Pokud máte vlastní
                 představu, vytvoříme design přímo pro vás.
               </p>
 
@@ -234,8 +234,8 @@ export default function GrilovaciLornyPage() {
               nebo vlastní design naceníme individuálně po poptávce.
             </p>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-500">
-              Kliknutím na rozměr se otevře e-mail s předvyplněnou objednávkou
-              — stačí doplnit počet kusů a odeslat.
+              Kliknutím na rozměr se otevře e-mail s předvyplněnou objednávkou,
+              stačí doplnit počet kusů a odeslat.
             </p>
             <WeldSeam className="mt-8 w-14 text-red" />
           </div>
@@ -289,7 +289,7 @@ export default function GrilovaciLornyPage() {
               Mám zájem o grilovací Lornu
             </h2>
             <p className="mt-2 max-w-md text-sm text-offwhite/60">
-              Tlačítko otevře e-mail s předvyplněnou poptávkou — doplňte rozměr
+              Tlačítko otevře e-mail s předvyplněnou poptávkou: doplňte rozměr
               nebo vlastní představu a do 24 hodin se ozveme s návrhem a cenou.
             </p>
           </div>

@@ -20,13 +20,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.domain),
   title: {
-    default: `${SITE.name} — ${SITE.tagline}`,
-    template: `%s — ${SITE.name}`,
+    default: `${SITE.name} | ${SITE.tagline}`,
+    template: `%s | ${SITE.name}`,
   },
   description:
-    "Schovinox — zakázková kovovýroba a zámečnické práce, kooperace pro firmy a výroba produktů na grilování. Řemeslo stavěné na generacích zkušeností.",
+    "Schovinox: zakázková kovovýroba a zámečnické práce, kooperace pro firmy a výroba produktů na grilování. Řemeslo stavěné na generacích zkušeností.",
   openGraph: {
-    title: `${SITE.name} — ${SITE.tagline}`,
+    title: `${SITE.name} | ${SITE.tagline}`,
     description:
       "Zakázková kovovýroba, kooperace pro firmy a produkty na grilování na míru. Poctivé řemeslo s dlouholetou praxí.",
     url: SITE.domain,

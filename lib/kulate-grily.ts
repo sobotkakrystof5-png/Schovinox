@@ -42,14 +42,39 @@ export const GRIL_SPECS: SpecRow[] = [
 /** Hlavní fotka vlevo v sekci „Co je kulatý gril“. */
 export const GRIL_INTRO_PHOTO: ProductPhoto = {
   id: "kulaty-gril-intro",
-  alt: "Nerezový kulatý gril se zadním topeništěm",
+  src: "/kulate-grily/kulaty-gril-intro.jpeg",
+  alt: "Kulatý nerezový gril z boku — komínek, samostatné topeniště, motorek a sklopný dřevěný stoleček",
 };
 
 export const GRIL_PHOTOS: ProductPhoto[] = [
-  { id: "kulaty-gril-1", alt: "Nerezový kulatý gril se zadním topeništěm — celkový pohled" },
-  { id: "kulaty-gril-2", alt: "Detail topeniště a vsádky z nerezové kulatiny" },
-  { id: "kulaty-gril-3", alt: "Otočná jehla s napichováky a nerezový motorek" },
-  { id: "kulaty-gril-4", alt: "Odkládací stoleček s dřevěnou spárovkou" },
-  { id: "kulaty-gril-5", alt: "Kulatý gril při rožnění" },
-  { id: "kulaty-gril-6", alt: "Broušený nerezový povrch kulatého grilu" },
+  {
+    id: "kulaty-gril-1",
+    src: "/kulate-grily/kulaty-gril-1.jpeg",
+    alt: "Zavřený kulatý gril zepředu — komínek, teploměr na víku a sklopný dřevěný stoleček",
+  },
+  {
+    id: "kulaty-gril-2",
+    src: "/kulate-grily/kulaty-gril-2.jpeg",
+    alt: "Otevřený gril zepředu — otočná jehla s napichováky nad odkapovým plechem, v pozadí mřížovaná stěna topeniště",
+  },
+  {
+    id: "kulaty-gril-3",
+    src: "/kulate-grily/kulaty-gril-3.jpeg",
+    alt: "Detail otočné jehly se čtyřmi napichováky a křídlovými maticemi nad odkapovým plechem",
+  },
+  {
+    id: "kulaty-gril-4",
+    src: "/kulate-grily/kulaty-gril-4.jpeg",
+    alt: "Pohled do otevřeného grilu — jehla nad odkapovým plechem, mřížovaná stěna topeniště a dřevěný stoleček v popředí",
+  },
+  {
+    id: "kulaty-gril-5",
+    src: "/kulate-grily/kulaty-gril-5.jpeg",
+    alt: "Detail otevřeného topeniště s roštem z nerezové kulatiny, v pozadí komínek a madlo víka",
+  },
+  {
+    id: "kulaty-gril-6",
+    src: "/kulate-grily/kulaty-gril-6.jpeg",
+    alt: "Kulatý gril z boku — komínek, samostatné topeniště, nerezový motorek a sklopný stoleček",
+  },
 ];

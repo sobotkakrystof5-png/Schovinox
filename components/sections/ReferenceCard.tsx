@@ -35,7 +35,7 @@ export default function ReferenceCard({ testimonial, index, total }: ReferenceCa
         <div className="mt-5 border-t border-ink/10 pt-4 text-sm">
           <span className="font-medium text-ink">{testimonial.name}</span>
           {testimonial.company && (
-            <span className="text-gray-500"> — {testimonial.company}</span>
+            <span className="text-gray-500">, {testimonial.company}</span>
           )}
         </div>
       </div>

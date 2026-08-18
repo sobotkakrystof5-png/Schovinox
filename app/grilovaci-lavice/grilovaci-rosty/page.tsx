@@ -9,7 +9,7 @@ import { GRILL_PAGES } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Grilovací rošty",
   description:
-    "Grilovací rošty z potravinářského nerezu 1.4301 připravujeme. Rozměr i provedení vyrobíme na míru — napište nám a domluvíme se.",
+    "Grilovací rošty z potravinářského nerezu 1.4301 připravujeme. Rozměr i provedení vyrobíme na míru, napište nám a domluvíme se.",
   // Stránka zatím nemá obsah — do vyhledávače ji pouštět nechceme.
   robots: { index: false, follow: true },
 };
@@ -45,7 +45,7 @@ export default function GrilovaciRostyPage() {
           </div>
           <div className="md:col-span-5 md:pb-2">
             <p className="max-w-md text-sm leading-relaxed text-gray-500">
-              Na téhle stránce pracujeme — fotky, rozměry a ceny sem doplníme,
+              Na téhle stránce pracujeme: fotky, rozměry a ceny sem doplníme,
               jakmile budou hotové.
             </p>
           </div>
@@ -65,7 +65,7 @@ export default function GrilovaciRostyPage() {
           <Reveal className="md:col-span-7">
             <p className="text-base leading-relaxed text-ink">
               Grilovací rošty vyrábíme ze stejného materiálu jako zbytek naší
-              produktové řady — z broušeného potravinářského nerezu 1.4301, bez
+              produktové řady: z broušeného potravinářského nerezu 1.4301, bez
               nátěrů a laků.
             </p>
             <p className="mt-5 text-sm leading-relaxed text-gray-500">
@@ -82,7 +82,7 @@ export default function GrilovaciRostyPage() {
               Poptat grilovací rošt
             </a>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-gray-500">
-              Tlačítko otevře e-mail s předvyplněnou poptávkou — stačí doplnit
+              Tlačítko otevře e-mail s předvyplněnou poptávkou, stačí doplnit
               rozměr a odeslat.
             </p>
           </Reveal>

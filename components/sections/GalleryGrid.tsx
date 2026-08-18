@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import PlaceholderImage from "@/components/ui/PlaceholderImage";
+import Image from "next/image";
 import Lightbox from "@/components/sections/Lightbox";
 import { GALLERY_CATEGORIES, GALLERY_IMAGES, type GalleryCategory } from "@/lib/gallery";
 
@@ -47,10 +47,13 @@ export default function GalleryGrid() {
             onClick={() => setActiveIndex(i)}
             className="block w-full text-left"
           >
-            <PlaceholderImage
-              label={`[FOTO ${img.id}] ${img.category}`}
-              aspectRatio={img.ratio}
-              className="transition-opacity hover:opacity-80"
+            <Image
+              src={img.src}
+              alt={img.alt}
+              width={img.width}
+              height={img.height}
+              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+              className="w-full h-auto transition-opacity hover:opacity-80"
             />
           </button>
         ))}

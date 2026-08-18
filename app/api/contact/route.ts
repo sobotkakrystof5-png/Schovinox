@@ -44,7 +44,7 @@ export async function POST(request: Request) {
       from: fromAddress,
       to: toAddress,
       replyTo: email,
-      subject: `Nová poptávka — ${inquiryLabel}`,
+      subject: `Nová poptávka: ${inquiryLabel}`,
       text: [
         `Jméno: ${name}`,
         `E-mail: ${email}`,
@@ -59,7 +59,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: fromAddress,
       to: email,
-      subject: "Děkujeme za poptávku — Schovinox",
+      subject: "Děkujeme za poptávku - Schovinox",
       text: `Dobrý den ${name},\n\nděkujeme za poptávku (${inquiryLabel}). Ozveme se vám do 24 hodin.\n\nSchovinox`,
     });
 

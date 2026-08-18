@@ -77,7 +77,7 @@ export default function ProductGallery({
               key={photo.id}
               type="button"
               onClick={() => setIndex(openIndex)}
-              aria-label={`Zvětšit fotku — ${photo.alt}`}
+              aria-label={`Zvětšit fotku: ${photo.alt}`}
               className={`group relative overflow-hidden border border-ink/10 bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-red focus-visible:ring-offset-2 ${span}`}
             >
               <Image

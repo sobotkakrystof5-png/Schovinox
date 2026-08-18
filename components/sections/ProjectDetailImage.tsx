@@ -14,7 +14,7 @@ export default function ProjectDetailImage({ project }: { project: Project }) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        aria-label={`Zvětšit fotku — ${project.title}`}
+        aria-label={`Zvětšit fotku: ${project.title}`}
         className="group relative block w-full overflow-hidden text-left"
       >
         <div className="relative w-full" style={{ aspectRatio: "4 / 3" }}>

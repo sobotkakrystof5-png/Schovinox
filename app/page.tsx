@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import WeldSeam from "@/components/ui/WeldSeam";
 import StatNumber from "@/components/ui/StatNumber";
 import Reveal from "@/components/ui/Reveal";
@@ -15,10 +15,12 @@ const STATS = [
 const TEASERS = [
   {
     title: "Náš příběh",
-    text: "Od brigády u dědy zámečníka po profesionální svařování — řemeslo, které rodina drží přes tři generace.",
+    text: "Od brigády u dědy zámečníka po profesionální svařování: řemeslo, které rodina drží přes tři generace.",
     href: "/o-nas",
     span: "md:col-span-7",
     ratio: "16 / 10",
+    image: "/o-nas-portret.jpeg",
+    alt: "Pan Schovánek při TIG svařování nerezové nádrže v dílně",
   },
   {
     title: "Služby",
@@ -26,13 +28,17 @@ const TEASERS = [
     href: "/sluzby",
     span: "md:col-span-5",
     ratio: "4 / 5",
+    image: "/sluzby/zakazkova-vyroba.jpeg",
+    alt: "Zakázkově vyrobený nerezový díl v dílně Schovinox",
   },
   {
-    title: "Grilovací Lorny",
-    text: "Vlastní produktová řada — ruční výroba z broušeného potravinářského nerezu 1.4301, design na míru vaší zahradě.",
+    title: "Grilování",
+    text: "Vlastní produktová řada: ruční výroba z broušeného potravinářského nerezu 1.4301, design na míru vaší zahradě.",
     href: "/grilovaci-lavice/grilovaci-lorny",
     span: "md:col-span-5",
     ratio: "4 / 5",
+    image: "/lorny/lorna-5.jpeg",
+    alt: "Grilovací Lorna z potravinářského nerezu 1.4301 na stojanu s odklopeným plochým krytem",
   },
   {
     title: "Projekty",
@@ -40,6 +46,8 @@ const TEASERS = [
     href: "/projekty",
     span: "md:col-span-7",
     ratio: "16 / 10",
+    image: "/projekty/projekt-1.jpeg",
+    alt: "Mycí stůl na míru pro hasičskou zbrojnici",
   },
 ];
 
@@ -49,10 +57,12 @@ export default function HomePage() {
       {/* Hero — asymmetric: content anchored bottom-left over a full-bleed photo, not centered */}
       <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-ink">
         <div className="absolute inset-0">
-          <PlaceholderImage
-            label="[FOTO: Pan Schovánek při svařování v dílně, celoplošná fotografie]"
-            aspectRatio="auto"
-            className="h-full w-full border-0"
+          <Image
+            src="/homepage-hero.jpeg"
+            alt="Detailní záběr na svařovaný nerezový profil s navrtanými otvory v dílně Schovinox"
+            fill
+            className="h-full w-full object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-ink/45" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20" />
@@ -67,7 +77,7 @@ export default function HomePage() {
               Řemeslo, které drží desetiletí.
             </h1>
             <p className="mt-6 max-w-md text-base text-offwhite/70">
-              Kov, přesnost a čtyřicet let rodinné zkušenosti — zakázková
+              Kov, přesnost a čtyřicet let rodinné zkušenosti: zakázková
               kovovýroba, kooperace pro firmy a vlastní produkty na grilování.
             </p>
           </div>
@@ -116,7 +126,7 @@ export default function HomePage() {
           <Reveal className="md:col-span-8 md:col-start-4">
             <p className="font-display text-2xl leading-snug tracking-tight text-ink md:text-3xl">
               Nejsme velká firma s katalogem. Jsme dílna, kde se každá
-              zakázka dělá tak, jako by šla do vlastního domu — s
+              zakázka dělá tak, jako by šla do vlastního domu, s
               přesností, kterou dá jen desítky let za svářečkou a bruskou.
             </p>
           </Reveal>
@@ -127,13 +137,10 @@ export default function HomePage() {
       <section className="py-24">
         <div className="container-page">
           <Reveal>
-            <div className="mb-10 flex items-baseline justify-between">
+            <div className="mb-10">
               <h2 className="font-display text-3xl tracking-tight text-ink">
-                Co u nás najdete
+                Přehled Schovinox
               </h2>
-              <span className="hidden text-sm text-gray-500 md:block">
-                Vyberte si, co vás zajímá nejvíc
-              </span>
             </div>
           </Reveal>
 
@@ -145,11 +152,18 @@ export default function HomePage() {
                 className={`group ${teaser.span}`}
               >
                 <Link href={teaser.href} className="block">
-                  <PlaceholderImage
-                    label={`[FOTO: ${teaser.title}]`}
-                    aspectRatio={teaser.ratio}
-                    className="transition-opacity group-hover:opacity-90"
-                  />
+                  <div
+                    className="relative overflow-hidden border border-ink/10"
+                    style={{ aspectRatio: teaser.ratio }}
+                  >
+                    <Image
+                      src={teaser.image}
+                      alt={teaser.alt}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-opacity group-hover:opacity-90"
+                    />
+                  </div>
                   <div className="mt-4 flex items-start justify-between gap-4 border-t border-ink/10 pt-4">
                     <div>
                       <h3 className="font-display text-lg tracking-tight text-ink">
