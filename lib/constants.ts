@@ -61,6 +61,7 @@ export const SITE = {
   phone: "734 859 363",
   phoneHref: "tel:+420734859363",
   email: "nerez.schovanek@seznam.cz",
+  ico: "08386587",
   address: {
     street: "Kněžice 88",
     city: "Kněžice",

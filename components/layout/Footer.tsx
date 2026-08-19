@@ -65,7 +65,7 @@ export default function Footer() {
       <div className="container-page flex flex-col gap-2 border-t border-offwhite/10 py-8 text-[0.8rem] text-offwhite/40 md:flex-row md:justify-between">
         <span>© {new Date().getFullYear()} Schovinox. Všechna práva vyhrazena.</span>
         <div className="flex flex-col gap-1 md:items-end">
-          <span>IČO: ...... · ......</span>
+          <span>IČO: {SITE.ico}</span>
           <span>
             Vyrobeno{" "}
             <a
