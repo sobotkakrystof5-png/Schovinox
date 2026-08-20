@@ -3,17 +3,35 @@ import ReferenceCard from "@/components/sections/ReferenceCard";
 import ReferenceForm from "@/components/forms/ReferenceForm";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { TESTIMONIALS } from "@/lib/testimonials";
+import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Reference",
   description:
     "Reference od zákazníků Schovinox, napsané těmi, pro které jsme dělali, ne námi.",
+  alternates: {
+    canonical: "/reference",
+  },
+  openGraph: {
+    title: `Reference | ${SITE.name}`,
+    description:
+      "Reference od zákazníků Schovinox, napsané těmi, pro které jsme dělali, ne námi.",
+    url: "/reference",
+    type: "website",
+    // Fallback fotka — dedikované referenční fotky zatím nejsou (TESTIMONIALS je prázdné).
+    images: [{ url: "/galerie/realizace-1.jpeg" }],
+  },
 };
+
+// TODO: Až bude TESTIMONIALS obsahovat skutečné reference, doplnit sem
+// Review / AggregateRating JSON-LD (ne dřív — fingovat hodnocení nejde).
 
 export default function ReferencePage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Reference", path: "/reference" }]} />
       <section className="border-b border-ink/10 pt-32">
         <div className="container-page pb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-red">

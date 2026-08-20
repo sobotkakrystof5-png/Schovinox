@@ -5,6 +5,7 @@ import ProductGallery from "@/components/sections/ProductGallery";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { formatPrice, orderMailHref } from "@/lib/grily";
 import type { LornaVariant } from "@/lib/lorny";
 import { LORNA_SERIES, LORNA_INTRO_PHOTO, LORNA_PHOTOS } from "@/lib/lorny";
@@ -14,6 +15,17 @@ export const metadata: Metadata = {
   title: "Grilovací Lorny",
   description:
     "Grilovací Lorny z potravinářského nerezu 1.4301: plech síly 2 mm, kartáčovaný povrch, mořené sváry. Šest rozměrů s jasnými cenami, design na míru.",
+  alternates: {
+    canonical: "/grilovaci-lavice/grilovaci-lorny",
+  },
+  openGraph: {
+    title: `Grilovací Lorny | ${SITE.name}`,
+    description:
+      "Grilovací Lorny z potravinářského nerezu 1.4301: plech síly 2 mm, kartáčovaný povrch, mořené sváry. Šest rozměrů s jasnými cenami, design na míru.",
+    url: "/grilovaci-lavice/grilovaci-lorny",
+    type: "website",
+    images: [{ url: "/lorny/lorna-5.jpeg" }],
+  },
 };
 
 const FEATURES = [
@@ -71,6 +83,11 @@ function variantMail(variant: LornaVariant): string {
 export default function GrilovaciLornyPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Grilovací Lorny", path: "/grilovaci-lavice/grilovaci-lorny" },
+        ]}
+      />
       {/* Hero */}
       <section className="border-b border-ink/10 pt-32">
         <div className="container-page grid gap-8 pb-16 md:grid-cols-12 md:items-end">

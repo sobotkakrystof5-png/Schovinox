@@ -57,7 +57,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const SITE = {
   name: "Schovinox",
   tagline: "Zámečnictví, kovovýroba a svářečské řemeslo",
-  domain: "https://schovinox.cz",
+  domain: process.env.NEXT_PUBLIC_SITE_URL || "https://schovinox.cz",
   phone: "734 859 363",
   phoneHref: "tel:+420734859363",
   email: "nerez.schovanek@seznam.cz",

@@ -1,15 +1,31 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import ContactForm from "@/components/forms/ContactForm";
 import WeldSeam from "@/components/ui/WeldSeam";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { SITE, INQUIRY_TYPES } from "@/lib/constants";
 import { LORNA_VARIANTS } from "@/lib/lorny";
 import { GRIL_SLUG } from "@/lib/kulate-grily";
+
+const ContactForm = dynamic(() => import("@/components/forms/ContactForm"));
 
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
     "Kontaktujte Schovinox: nezávazná poptávka zakázkové kovovýroby, zámečnických prací, kooperace nebo produktů na grilování.",
+  alternates: {
+    // Bare cesta bez query — ?typ=/?rozmer=/?produkt= jsou jen předvyplněné
+    // varianty stejného obsahu, ne samostatný obsah.
+    canonical: "/kontakt",
+  },
+  openGraph: {
+    title: `Kontakt | ${SITE.name}`,
+    description:
+      "Kontaktujte Schovinox: nezávazná poptávka zakázkové kovovýroby, zámečnických prací, kooperace nebo produktů na grilování.",
+    url: "/kontakt",
+    type: "website",
+    images: [{ url: "/homepage-hero.jpeg" }],
+  },
 };
 
 type KontaktPageProps = {
@@ -39,6 +55,7 @@ export default function KontaktPage({ searchParams }: KontaktPageProps) {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Kontakt", path: "/kontakt" }]} />
       <section className="border-b border-ink/10 pt-32">
         <div className="container-page pb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-red">

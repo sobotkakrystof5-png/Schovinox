@@ -5,12 +5,24 @@ import { ArrowUpRight } from "lucide-react";
 import SectionMark from "@/components/ui/SectionMark";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
-import { GRILL_PAGES } from "@/lib/constants";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
+import { GRILL_PAGES, SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Služby",
   description:
     "Zakázková kovovýroba a zámečnické práce, kooperace pro výrobní firmy a výroba produktů na grilování. Tři obory, jedna dílna.",
+  alternates: {
+    canonical: "/sluzby",
+  },
+  openGraph: {
+    title: `Služby | ${SITE.name}`,
+    description:
+      "Zakázková kovovýroba a zámečnické práce, kooperace pro výrobní firmy a výroba produktů na grilování. Tři obory, jedna dílna.",
+    url: "/sluzby",
+    type: "website",
+    images: [{ url: "/sluzby/zakazkova-vyroba.jpeg" }],
+  },
 };
 
 const SERVICES = [
@@ -45,6 +57,7 @@ const SERVICES = [
 export default function SluzbyPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Služby", path: "/sluzby" }]} />
       <section className="border-b border-ink/10 pt-32">
         <div className="container-page pb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-red">

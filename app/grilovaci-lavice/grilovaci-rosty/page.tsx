@@ -3,8 +3,9 @@ import Link from "next/link";
 import { ArrowUpRight, Mail } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { orderMailHref } from "@/lib/grily";
-import { GRILL_PAGES } from "@/lib/constants";
+import { GRILL_PAGES, SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Grilovací rošty",
@@ -12,6 +13,17 @@ export const metadata: Metadata = {
     "Grilovací rošty z potravinářského nerezu 1.4301 připravujeme. Rozměr i provedení vyrobíme na míru, napište nám a domluvíme se.",
   // Stránka zatím nemá obsah — do vyhledávače ji pouštět nechceme.
   robots: { index: false, follow: true },
+  alternates: {
+    canonical: "/grilovaci-lavice/grilovaci-rosty",
+  },
+  openGraph: {
+    title: `Grilovací rošty | ${SITE.name}`,
+    description:
+      "Grilovací rošty z potravinářského nerezu 1.4301 připravujeme. Rozměr i provedení vyrobíme na míru, napište nám a domluvíme se.",
+    url: "/grilovaci-lavice/grilovaci-rosty",
+    type: "website",
+    images: [{ url: "/sluzby/vyroba-grilovacich-produktu.jpeg" }],
+  },
 };
 
 // Ostatní produkty sekce Grilování — na tuhle stránku patří jako rozcestník,
@@ -32,6 +44,11 @@ const ORDER_MAIL = orderMailHref({
 export default function GrilovaciRostyPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Grilovací rošty", path: "/grilovaci-lavice/grilovaci-rosty" },
+        ]}
+      />
       {/* Hero */}
       <section className="border-b border-ink/10 pt-32">
         <div className="container-page grid gap-8 pb-16 md:grid-cols-12 md:items-end">

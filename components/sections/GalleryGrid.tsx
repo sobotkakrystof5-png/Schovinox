@@ -1,9 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import Lightbox from "@/components/sections/Lightbox";
 import { GALLERY_CATEGORIES, GALLERY_IMAGES, type GalleryCategory } from "@/lib/gallery";
+
+const Lightbox = dynamic(() => import("@/components/sections/Lightbox"), { ssr: false });
 
 export default function GalleryGrid() {
   const [filter, setFilter] = useState<"Vše" | GalleryCategory>("Vše");

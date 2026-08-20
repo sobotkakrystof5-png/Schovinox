@@ -3,11 +3,24 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
+import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Ceník",
   description:
     "Ceník služeb Schovinox: jednotná hodinová sazba na zakázkovou kovovýrobu, zámečnické práce a kooperaci, u větších zakázek cena předem.",
+  alternates: {
+    canonical: "/cenik",
+  },
+  openGraph: {
+    title: `Ceník | ${SITE.name}`,
+    description:
+      "Ceník služeb Schovinox: jednotná hodinová sazba na zakázkovou kovovýrobu, zámečnické práce a kooperaci, u větších zakázek cena předem.",
+    url: "/cenik",
+    type: "website",
+    images: [{ url: "/homepage-hero.jpeg" }],
+  },
 };
 
 const PRICE_ITEMS = [
@@ -28,6 +41,7 @@ const PRICE_ITEMS = [
 export default function CenikPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Ceník", path: "/cenik" }]} />
       <section className="border-b border-ink/10 pt-32">
         <div className="container-page pb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-red">

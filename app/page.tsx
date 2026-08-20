@@ -1,9 +1,27 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import WeldSeam from "@/components/ui/WeldSeam";
 import StatNumber from "@/components/ui/StatNumber";
 import Reveal from "@/components/ui/Reveal";
+import { SITE } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  description:
+    "Kov, přesnost a čtyřicet let rodinné zkušenosti: zakázková kovovýroba, kooperace pro firmy a vlastní produkty na grilování.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: `${SITE.name} | ${SITE.tagline}`,
+    description:
+      "Kov, přesnost a čtyřicet let rodinné zkušenosti: zakázková kovovýroba, kooperace pro firmy a vlastní produkty na grilování.",
+    url: "/",
+    type: "website",
+    images: [{ url: "/homepage-hero.jpeg" }],
+  },
+};
 
 const STATS = [
   { value: 16, suffix: "", label: "let praxe v oboru" },
@@ -61,6 +79,7 @@ export default function HomePage() {
             src="/homepage-hero.jpeg"
             alt="Detailní záběr na svařovaný nerezový profil s navrtanými otvory v dílně Schovinox"
             fill
+            sizes="100vw"
             className="h-full w-full object-cover"
             priority
           />

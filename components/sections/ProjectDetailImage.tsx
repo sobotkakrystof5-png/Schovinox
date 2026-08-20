@@ -1,10 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { ZoomIn } from "lucide-react";
-import ProjectLightbox from "@/components/sections/ProjectLightbox";
 import type { Project } from "@/lib/projects";
+
+const ProjectLightbox = dynamic(() => import("@/components/sections/ProjectLightbox"), {
+  ssr: false,
+});
 
 export default function ProjectDetailImage({ project }: { project: Project }) {
   const [open, setOpen] = useState(false);

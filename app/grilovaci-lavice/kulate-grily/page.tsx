@@ -5,6 +5,7 @@ import ProductGallery from "@/components/sections/ProductGallery";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { formatPrice, orderMailHref } from "@/lib/grily";
 import {
   GRIL_INCLUDED,
@@ -19,6 +20,17 @@ export const metadata: Metadata = {
   title: "Kulaté grily",
   description:
     "Nerezový kulatý gril se zadním topeništěm: Ø 475 × 750 mm, plášť 2,5 mm, potravinářský nerez 1.4301. Kompletní set s motorkem, jehlou a stolečkem za 27 000 Kč.",
+  alternates: {
+    canonical: "/grilovaci-lavice/kulate-grily",
+  },
+  openGraph: {
+    title: `Kulaté grily | ${SITE.name}`,
+    description:
+      "Nerezový kulatý gril se zadním topeništěm: Ø 475 × 750 mm, plášť 2,5 mm, potravinářský nerez 1.4301. Kompletní set s motorkem, jehlou a stolečkem za 27 000 Kč.",
+    url: "/grilovaci-lavice/kulate-grily",
+    type: "website",
+    images: [{ url: "/kulate-grily/kulaty-gril-intro.jpeg" }],
+  },
 };
 
 const FEATURES = [
@@ -64,6 +76,9 @@ const ORDER_MAIL = orderMailHref({
 export default function KulateGrilyPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[{ name: "Kulaté grily", path: "/grilovaci-lavice/kulate-grily" }]}
+      />
       {/* Hero */}
       <section className="border-b border-ink/10 pt-32">
         <div className="container-page grid gap-8 pb-16 md:grid-cols-12 md:items-end">

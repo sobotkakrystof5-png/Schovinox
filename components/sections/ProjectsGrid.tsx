@@ -1,10 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import Reveal from "@/components/ui/Reveal";
 import ProjectCard from "@/components/sections/ProjectCard";
-import ProjectLightbox from "@/components/sections/ProjectLightbox";
 import { PROJECTS } from "@/lib/projects";
+
+const ProjectLightbox = dynamic(() => import("@/components/sections/ProjectLightbox"), {
+  ssr: false,
+});
 
 export default function ProjectsGrid() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

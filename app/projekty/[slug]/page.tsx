@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import ProjectDetailImage from "@/components/sections/ProjectDetailImage";
 import WeldSeam from "@/components/ui/WeldSeam";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { PROJECTS, getProjectBySlug } from "@/lib/projects";
 
 type Props = {
@@ -21,6 +22,16 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: project.title,
     description: project.summary,
+    alternates: {
+      canonical: `/projekty/${project.slug}`,
+    },
+    openGraph: {
+      title: project.title,
+      description: project.summary,
+      url: `/projekty/${project.slug}`,
+      type: "website",
+      images: [{ url: project.image }],
+    },
   };
 }
 
@@ -33,6 +44,12 @@ export default function ProjektDetailPage({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Projekty", path: "/projekty" },
+          { name: project.title, path: `/projekty/${project.slug}` },
+        ]}
+      />
       <section className="border-b border-ink/10 pt-32">
         <div className="container-page pb-12">
           <Link

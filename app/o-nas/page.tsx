@@ -3,11 +3,24 @@ import Image from "next/image";
 import Timeline from "@/components/sections/Timeline";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
+import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Náš příběh",
   description:
     "Od brigády u dědy zámečníka po profesionální svařování: příběh Schovinox napříč třemi generacemi řemesla.",
+  alternates: {
+    canonical: "/o-nas",
+  },
+  openGraph: {
+    title: `Náš příběh | ${SITE.name}`,
+    description:
+      "Od brigády u dědy zámečníka po profesionální svařování: příběh Schovinox napříč třemi generacemi řemesla.",
+    url: "/o-nas",
+    type: "website",
+    images: [{ url: "/o-nas-portret.jpeg" }],
+  },
 };
 
 const MILESTONES = [
@@ -41,6 +54,7 @@ const MILESTONES = [
 export default function ONasPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "O nás", path: "/o-nas" }]} />
       <section className="border-b border-ink/10 pt-32">
         <div className="container-page pb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-red">
