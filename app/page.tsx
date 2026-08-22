@@ -146,7 +146,7 @@ export default function HomePage() {
             <p className="font-display text-2xl leading-snug tracking-tight text-ink md:text-3xl">
               Nejsme velká firma s katalogem. Jsme dílna, kde se každá
               zakázka dělá tak, jako by šla do vlastního domu, s
-              přesností, kterou dá jen desítky let za svářečkou a bruskou.
+              přesností, kterou dá jedině desítky let za svářečkou a bruskou.
             </p>
           </Reveal>
         </div>
