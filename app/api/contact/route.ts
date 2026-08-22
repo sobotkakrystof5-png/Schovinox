@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import { getFromAddress, getTransporter, isMailConfigured } from "@/lib/mailer";
 import { contactSchema } from "@/lib/validations/contact";
 import { INQUIRY_TYPES, SITE } from "@/lib/constants";
 
@@ -23,9 +23,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.error("RESEND_API_KEY není nastaven — e-mail nebyl odeslán.");
+  if (!isMailConfigured()) {
+    console.error("SMTP_USER / SMTP_PASS nejsou nastaveny — e-mail nebyl odeslán.");
     return NextResponse.json(
       { error: "Formulář je dočasně nedostupný, zkuste to prosím telefonicky." },
       { status: 500 },
@@ -36,11 +35,11 @@ export async function POST(request: Request) {
     INQUIRY_TYPES.find((type) => type.value === inquiryType)?.label ?? inquiryType;
 
   try {
-    const resend = new Resend(apiKey);
-    const fromAddress = process.env.CONTACT_FROM_EMAIL ?? "Schovinox web <onboarding@resend.dev>";
+    const transporter = getTransporter();
+    const fromAddress = getFromAddress();
     const toAddress = process.env.CONTACT_EMAIL ?? SITE.email;
 
-    await resend.emails.send({
+    await transporter.sendMail({
       from: fromAddress,
       to: toAddress,
       replyTo: email,
@@ -56,7 +55,7 @@ export async function POST(request: Request) {
       ].join("\n"),
     });
 
-    await resend.emails.send({
+    await transporter.sendMail({
       from: fromAddress,
       to: email,
       subject: "Děkujeme za poptávku - Schovinox",
@@ -65,7 +64,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("Odeslání e-mailu přes Resend selhalo:", err);
+    console.error("Odeslání e-mailu přes SMTP selhalo:", err);
     return NextResponse.json(
       { error: "Odeslání se nezdařilo, zkuste to prosím znovu." },
       { status: 500 },
