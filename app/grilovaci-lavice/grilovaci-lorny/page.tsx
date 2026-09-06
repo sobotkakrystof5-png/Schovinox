@@ -6,9 +6,10 @@ import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
+import ProductGroupJsonLd from "@/components/seo/ProductGroupJsonLd";
 import { formatPrice, orderMailHref } from "@/lib/grily";
 import type { LornaVariant } from "@/lib/lorny";
-import { LORNA_SERIES, LORNA_INTRO_PHOTO, LORNA_PHOTOS } from "@/lib/lorny";
+import { LORNA_SERIES, LORNA_VARIANTS, LORNA_INTRO_PHOTO, LORNA_PHOTOS } from "@/lib/lorny";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -87,6 +88,18 @@ export default function GrilovaciLornyPage() {
         items={[
           { name: "Grilovací Lorny", path: "/grilovaci-lavice/grilovaci-lorny" },
         ]}
+      />
+      <ProductGroupJsonLd
+        productGroupID="grilovaci-lorny"
+        name="Grilovací Lorna"
+        path="/grilovaci-lavice/grilovaci-lorny"
+        image="/lorny/lorna-5.jpeg"
+        variants={LORNA_VARIANTS.map((variant) => ({
+          sku: `lorna-${variant.slug}`,
+          name: `Grilovací Lorna ${variant.size} mm`,
+          size: `${variant.size} mm`,
+          price: variant.price,
+        }))}
       />
       {/* Hero */}
       <section className="border-b border-ink/10 pt-32">

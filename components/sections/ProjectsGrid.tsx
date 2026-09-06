@@ -18,7 +18,11 @@ export default function ProjectsGrid() {
       <div className="grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((project, i) => (
           <Reveal key={project.slug} delay={(i % 3) * 0.06}>
-            <ProjectCard project={project} onImageClick={() => setActiveIndex(i)} />
+            <ProjectCard
+              project={project}
+              onImageClick={() => setActiveIndex(i)}
+              priority={i === 0}
+            />
           </Reveal>
         ))}
       </div>

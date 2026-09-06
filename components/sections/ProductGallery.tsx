@@ -89,6 +89,7 @@ export default function ProductGallery({
                 alt={photo.alt}
                 fill
                 sizes={sizes}
+                priority={i === 0}
                 className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.05]"
               />
 

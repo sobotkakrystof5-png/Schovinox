@@ -116,7 +116,7 @@ export default function Header() {
               type="button"
               onClick={() => setMenuOpen(true)}
               aria-label="Otevřít menu"
-              className="lg:hidden"
+              className="-m-3 p-3 lg:hidden"
             >
               <Menu className={transparent ? "text-offwhite" : "text-ink"} />
             </button>

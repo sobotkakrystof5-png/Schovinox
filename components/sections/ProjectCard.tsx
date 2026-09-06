@@ -6,9 +6,10 @@ import type { Project } from "@/lib/projects";
 type ProjectCardProps = {
   project: Project;
   onImageClick: () => void;
+  priority?: boolean;
 };
 
-export default function ProjectCard({ project, onImageClick }: ProjectCardProps) {
+export default function ProjectCard({ project, onImageClick, priority = false }: ProjectCardProps) {
   return (
     <div className="group">
       <button
@@ -23,6 +24,7 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
             alt={project.title}
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            priority={priority}
             className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         </div>

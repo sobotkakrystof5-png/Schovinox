@@ -79,7 +79,7 @@ export default function ReferenceForm() {
   };
 
   const inputClass =
-    "w-full border border-offwhite/20 bg-offwhite/[0.03] px-4 py-3 text-sm text-offwhite placeholder:text-offwhite/30 focus:border-red focus:outline-none";
+    "w-full border border-offwhite/20 bg-offwhite/[0.03] px-4 py-3 text-base md:text-sm text-offwhite placeholder:text-offwhite/30 focus:border-red focus:outline-none";
   const labelClass = "mb-1.5 block text-xs uppercase tracking-[0.14em] text-offwhite/50";
 
   return (

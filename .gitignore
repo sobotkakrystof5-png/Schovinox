@@ -26,3 +26,6 @@ next-env.d.ts
 
 # raw staging photos (processed copies live in /public)
 /fotky */
+
+# Claude Code local session files (interní, nepatří do repa)
+.claude/

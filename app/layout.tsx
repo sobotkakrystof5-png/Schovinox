@@ -61,17 +61,26 @@ function parseHoursRange(time: string): { opens: string; closes: string } {
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
+  "@id": `${SITE.domain}/#organization`,
   name: SITE.name,
+  description:
+    "Zakázková kovovýroba a zámečnické práce, kooperace pro firmy a výroba produktů na grilování z nerezu. Rodinná dílna v Kněžicích s 16 lety osobní praxe zakladatele.",
   image: `${SITE.domain}/homepage-hero.jpeg`,
   telephone: "+420 734 859 363",
   email: SITE.email,
   url: SITE.domain,
+  priceRange: "od 550 Kč/hod",
   address: {
     "@type": "PostalAddress",
     streetAddress: SITE.address.street,
     addressLocality: SITE.address.city,
     postalCode: SITE.address.zip,
     addressCountry: "CZ",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 50.25906,
+    longitude: 15.33393,
   },
   openingHoursSpecification: SITE.hours.map((h) => ({
     "@type": "OpeningHoursSpecification",

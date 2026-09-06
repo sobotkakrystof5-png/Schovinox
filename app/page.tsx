@@ -9,14 +9,14 @@ import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   description:
-    "Kov, přesnost a čtyřicet let rodinné zkušenosti: zakázková kovovýroba, kooperace pro firmy a vlastní produkty na grilování.",
+    "Kov, přesnost a čtyřicet let rodinné zkušenosti napříč generacemi: zakázková kovovýroba, kooperace pro firmy a vlastní produkty na grilování.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: `${SITE.name} | ${SITE.tagline}`,
     description:
-      "Kov, přesnost a čtyřicet let rodinné zkušenosti: zakázková kovovýroba, kooperace pro firmy a vlastní produkty na grilování.",
+      "Kov, přesnost a čtyřicet let rodinné zkušenosti napříč generacemi: zakázková kovovýroba, kooperace pro firmy a vlastní produkty na grilování.",
     url: "/",
     type: "website",
     images: [{ url: "/homepage-hero.jpeg" }],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const STATS = [
-  { value: 16, suffix: "", label: "let praxe v oboru" },
+  { value: 16, suffix: "", label: "let osobní praxe zakladatele" },
   { value: 100, suffix: "+", label: "dokončených realizací" },
   { value: 100, suffix: " %", label: "spokojených zákazníků" },
   { value: 2, suffix: "", label: "roky pod značkou Schovinox" },
@@ -96,8 +96,9 @@ export default function HomePage() {
               Řemeslo, které drží desetiletí.
             </h1>
             <p className="mt-6 max-w-md text-base text-offwhite/70">
-              Kov, přesnost a čtyřicet let rodinné zkušenosti: zakázková
-              kovovýroba, kooperace pro firmy a vlastní produkty na grilování.
+              Kov, přesnost a čtyřicet let rodinné zkušenosti napříč
+              generacemi: zakázková kovovýroba, kooperace pro firmy a vlastní
+              produkty na grilování.
             </p>
           </div>
 

@@ -53,7 +53,7 @@ export default function ContactForm({
   };
 
   const inputClass =
-    "w-full border border-ink/15 bg-offwhite px-4 py-3 text-sm text-ink placeholder:text-gray-500/70 focus:border-red focus:outline-none";
+    "w-full border border-ink/15 bg-offwhite px-4 py-3 text-base md:text-sm text-ink placeholder:text-gray-500/70 focus:border-red focus:outline-none";
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getFromAddress, getTransporter, isMailConfigured } from "@/lib/mailer";
+import { getFromAddress, getResendClient, isMailConfigured } from "@/lib/mailer";
 import {
   referenceSchema,
   REFERENCE_PHOTO_MAX_BYTES,
@@ -49,7 +49,7 @@ export async function POST(request: Request) {
   }
 
   if (!isMailConfigured()) {
-    console.error("SMTP_USER / SMTP_PASS nejsou nastaveny — e-mail nebyl odeslán.");
+    console.error("RESEND_API_KEY není nastaven — e-mail nebyl odeslán.");
     return NextResponse.json(
       { error: "Formulář je dočasně nedostupný, zkuste to prosím telefonicky." },
       { status: 500 },
@@ -57,11 +57,11 @@ export async function POST(request: Request) {
   }
 
   try {
-    const transporter = getTransporter();
+    const resend = getResendClient();
     const fromAddress = getFromAddress();
     const toAddress = process.env.CONTACT_EMAIL ?? SITE.email;
 
-    await transporter.sendMail({
+    await resend.emails.send({
       from: fromAddress,
       to: toAddress,
       subject: `Nová reference k posouzení: ${name}`,
@@ -79,7 +79,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("Odeslání e-mailu přes SMTP selhalo:", err);
+    console.error("Odeslání e-mailu přes Resend selhalo:", err);
     return NextResponse.json(
       { error: "Odeslání se nezdařilo, zkuste to prosím znovu." },
       { status: 500 },

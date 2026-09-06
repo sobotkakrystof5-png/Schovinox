@@ -1,31 +1,23 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
-let transporter: ReturnType<typeof nodemailer.createTransport> | null = null;
+let client: Resend | null = null;
 
 export function isMailConfigured(): boolean {
-  return Boolean(process.env.SMTP_USER && process.env.SMTP_PASS);
+  return Boolean(process.env.RESEND_API_KEY);
 }
 
-export function getTransporter() {
+export function getResendClient(): Resend {
   if (!isMailConfigured()) {
-    throw new Error("SMTP_USER / SMTP_PASS nejsou nastaveny — e-mail nelze odeslat.");
+    throw new Error("RESEND_API_KEY není nastaven — e-mail nelze odeslat.");
   }
 
-  if (!transporter) {
-    transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST ?? "smtp.seznam.cz",
-      port: Number(process.env.SMTP_PORT ?? 465),
-      secure: (process.env.SMTP_PORT ?? "465") === "465",
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+  if (!client) {
+    client = new Resend(process.env.RESEND_API_KEY);
   }
 
-  return transporter;
+  return client;
 }
 
 export function getFromAddress(): string {
-  return process.env.CONTACT_FROM_EMAIL ?? (process.env.SMTP_USER as string);
+  return process.env.CONTACT_FROM_EMAIL ?? "Schovinox web <onboarding@resend.dev>";
 }

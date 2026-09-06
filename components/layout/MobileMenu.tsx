@@ -47,7 +47,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             <span className="font-display text-xl font-semibold tracking-tight">
               SCHOVINOX
             </span>
-            <button type="button" onClick={onClose} aria-label="Zavřít menu">
+            <button type="button" onClick={onClose} aria-label="Zavřít menu" className="-m-3 p-3">
               <X className="text-offwhite" />
             </button>
           </div>

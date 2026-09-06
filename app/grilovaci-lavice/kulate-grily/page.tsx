@@ -6,6 +6,7 @@ import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
+import ProductJsonLd from "@/components/seo/ProductJsonLd";
 import { formatPrice, orderMailHref } from "@/lib/grily";
 import {
   GRIL_INCLUDED,
@@ -78,6 +79,14 @@ export default function KulateGrilyPage() {
     <>
       <BreadcrumbJsonLd
         items={[{ name: "Kulaté grily", path: "/grilovaci-lavice/kulate-grily" }]}
+      />
+      <ProductJsonLd
+        sku="kulaty-gril"
+        name="Kulatý gril se zadním topeništěm"
+        description="Nerezový kulatý gril se zadním topeništěm, Ø 475 × 750 mm, plášť 2,5 mm, potravinářský nerez 1.4301. Kompletní set s motorkem, jehlou a stolečkem."
+        path="/grilovaci-lavice/kulate-grily"
+        image="/kulate-grily/kulaty-gril-intro.jpeg"
+        price={GRIL_PRICE}
       />
       {/* Hero */}
       <section className="border-b border-ink/10 pt-32">
