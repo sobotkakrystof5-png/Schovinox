@@ -76,12 +76,24 @@ export default function ProjektDetailPage({ params }: Props) {
           <div className="md:col-span-5">
             <WeldSeam className="mb-6 w-14 text-red" />
             <dl className="grid grid-cols-2 gap-y-5 border-b border-ink/10 pb-8 text-sm">
-              <dt className="text-gray-500">Materiál</dt>
-              <dd className="text-ink">{project.material}</dd>
-              <dt className="text-gray-500">Lokalita</dt>
-              <dd className="text-ink">{project.location}</dd>
-              <dt className="text-gray-500">Rok realizace</dt>
-              <dd className="text-ink">{project.year}</dd>
+              {project.material && (
+                <>
+                  <dt className="text-gray-500">Materiál</dt>
+                  <dd className="text-ink">{project.material}</dd>
+                </>
+              )}
+              {project.location && (
+                <>
+                  <dt className="text-gray-500">Lokalita</dt>
+                  <dd className="text-ink">{project.location}</dd>
+                </>
+              )}
+              {project.year && (
+                <>
+                  <dt className="text-gray-500">Rok realizace</dt>
+                  <dd className="text-ink">{project.year}</dd>
+                </>
+              )}
               <dt className="text-gray-500">Typ zakázky</dt>
               <dd className="text-ink">{project.category}</dd>
             </dl>

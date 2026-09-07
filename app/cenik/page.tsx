@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
+import FaqJsonLd, { type FaqEntry } from "@/components/seo/FaqJsonLd";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -38,10 +39,24 @@ const PRICE_ITEMS = [
   },
 ];
 
+const FAQ_ITEMS: FaqEntry[] = [
+  {
+    question: "Jaká je hodinová sazba?",
+    answer:
+      "Zakázkovou kovovýrobu i kooperaci účtujeme jednotnou sazbou 550 Kč/hod. U větších zakázek stanovíme cenu předem, podle rozsahu a náročnosti.",
+  },
+  {
+    question: "Existuje minimální rozsah zakázky?",
+    answer:
+      "Ne, minimální rozsah zakázky u nás neexistuje — bereme i drobné opravy. Termín realizace vždy domluvíme předem a dodržíme ho.",
+  },
+];
+
 export default function CenikPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Ceník", path: "/cenik" }]} />
+      <FaqJsonLd items={FAQ_ITEMS} />
       <section className="border-b border-ink/10 pt-32">
         <div className="container-page pb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-red">
@@ -82,6 +97,29 @@ export default function CenikPage() {
                       </span>
                     )}
                   </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-ink/10 py-20 md:py-28">
+        <div className="container-page">
+          <WeldSeam className="mb-6 w-14 text-red" />
+          <h2 className="max-w-xl font-display text-3xl tracking-tight text-ink">
+            Časté dotazy
+          </h2>
+          <div className="mx-auto mt-12 max-w-2xl divide-y divide-ink/10 border-y border-ink/10">
+            {FAQ_ITEMS.map((item, i) => (
+              <Reveal key={item.question} delay={i * 0.05}>
+                <div className="py-8">
+                  <h3 className="font-display text-base tracking-tight text-ink">
+                    {item.question}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                    {item.answer}
+                  </p>
                 </div>
               </Reveal>
             ))}

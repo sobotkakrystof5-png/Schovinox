@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   },
 };
 
+const QUALIFICATIONS = [
+  "Svařování potrubí od průměru 5 mm bez horního omezení",
+  "Zkoušky pro svařování tlakových nádob — RTG, kapilární zkoušky, ultrazvuk",
+  "Svařování tupých i koutových svarů bez omezení",
+  "Čtení výkresové dokumentace a svařování potrubních tras",
+];
+
 const MILESTONES = [
   {
     mark: "14 let",
@@ -85,6 +92,23 @@ export default function ONasPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-ink/10 py-20 md:py-28">
+        <div className="container-page">
+          <WeldSeam className="mb-6 w-14 text-red" />
+          <h2 className="max-w-xl font-display text-3xl tracking-tight text-ink">
+            Kvalifikace a zkoušky
+          </h2>
+          <ul className="mx-auto mt-12 grid max-w-2xl gap-x-10 gap-y-6 border-y border-ink/10 py-10 sm:grid-cols-2">
+            {QUALIFICATIONS.map((item) => (
+              <li key={item} className="flex gap-3 text-sm leading-relaxed text-gray-500">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-red" aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

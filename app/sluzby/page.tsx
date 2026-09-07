@@ -6,6 +6,7 @@ import SectionMark from "@/components/ui/SectionMark";
 import Reveal from "@/components/ui/Reveal";
 import WeldSeam from "@/components/ui/WeldSeam";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
+import FaqJsonLd, { type FaqEntry } from "@/components/seo/FaqJsonLd";
 import { GRILL_PAGES, SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 const SERVICES = [
   {
     title: "Zakázková kovovýroba",
-    text: "Výroba na míru podle vašeho návrhu, výkresu nebo jen popisu: konstrukce, zábradlí, schodiště, nerezové díly i atypické zámečnické práce. Od zaměření na místě přes výrobu v dílně až po montáž.",
+    text: "Výroba na míru podle vašeho návrhu, výkresu, nebo jen slovního zadání — stačí popsat, co potřebujete, zbytek vyřešíme společně. Pracujeme s nerezí i konstrukční ocelí, u náročnějších zakázek zajistíme i výkresovou dokumentaci a atesty materiálu. Bereme i drobné zámečnické opravy, ne jen rozsáhlé zakázky — minimální rozsah zakázky u nás neexistuje. Termín stanovíme předem a dodržíme ho.",
     href: "/kontakt?typ=kovovyroba",
     ratio: "4 / 3",
     image: "/sluzby/zakazkova-vyroba.jpeg",
@@ -36,7 +37,7 @@ const SERVICES = [
   },
   {
     title: "Kooperace",
-    text: "Spolupráce s výrobními a strojírenskými firmami: subdodávky dílů, sériová výroba dle dokumentace, dlouhodobé partnerství s garantovanou kvalitou a termíny.",
+    text: "Spolupráce s výrobními a strojírenskými firmami: subdodávky dílů, sériová výroba dle dokumentace, dlouhodobé partnerství s garantovanou kvalitou a dodrženými termíny. Pracujeme i s materiálem dodaným od vás, pokud je pro danou zakázku vhodně zvolený.",
     href: "/kontakt?typ=kooperace",
     ratio: "4 / 3",
     image: "/sluzby/kooperace.jpeg",
@@ -54,10 +55,57 @@ const SERVICES = [
   },
 ];
 
+const PROCESS_STEPS = [
+  {
+    title: "Poptávka",
+    text: "Popíšete, co potřebujete — stačí i jen slovní zadání. Skica nebo hotový výkres pomůžou, ale nejsou podmínkou.",
+  },
+  {
+    title: "Upřesnění",
+    text: "Společně probereme materiál, rozsah a termín. U náročnějších zakázek zajistíme výkresovou dokumentaci nebo atesty materiálu, pokud je to potřeba.",
+  },
+  {
+    title: "Výroba",
+    text: "Zakázku vyrobíme v dílně v Kněžicích. Termín stanovíme předem a dodržíme ho — pozdní dodání u nás nehrozí.",
+  },
+  {
+    title: "Předání",
+    text: "Hotovou zakázku předáme, případně provedeme montáž přímo na místě.",
+  },
+];
+
+const FAQ_ITEMS: FaqEntry[] = [
+  {
+    question: "Děláte i drobné zámečnické opravy, nebo jen větší zakázky?",
+    answer:
+      "Ano, drobné zámečnické opravy provádíme běžně, nejen rozsáhlou zakázkovou kovovýrobu.",
+  },
+  {
+    question: "Jak dlouho trvá výroba zábradlí nebo grilovací Lorny na míru?",
+    answer:
+      "Standardní grilovací Lorny vedeme skladem a odesíláme zpravidla do druhého dne. Korby na míru a zakázková kovovýroba jako zábradlí se vyrábí podle aktuálního vytížení dílny — přesný termín dodání domluvíme předem a dodržíme ho.",
+  },
+  {
+    question: "Jak daleko od Kněžic jezdíte?",
+    answer:
+      "Vzdálenost sama o sobě nerozhoduje, spíš velikost zakázky. Standardně jezdíme do 100 km od Kněžic.",
+  },
+  {
+    question: "Pracujete i s materiálem, který dodá zákazník?",
+    answer:
+      "Ano, pokud je materiál pro danou zakázku správně zvolený a vhodný, dodaný materiál od zákazníka je výhodou.",
+  },
+  {
+    question: "Jaká je záruka na provedenou práci?",
+    answer: "Pokud materiál dodáváme my, poskytujeme na práci doživotní záruku.",
+  },
+];
+
 export default function SluzbyPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Služby", path: "/sluzby" }]} />
+      <FaqJsonLd items={FAQ_ITEMS} />
       <section className="border-b border-ink/10 pt-32">
         <div className="container-page pb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-red">
@@ -144,6 +192,49 @@ export default function SluzbyPage() {
           );
         })}
       </div>
+
+      <section className="border-b border-ink/10 py-20 md:py-28">
+        <div className="container-page">
+          <WeldSeam className="mb-6 w-14 text-red" />
+          <h2 className="max-w-xl font-display text-3xl tracking-tight text-ink">
+            Jak probíhá zakázka
+          </h2>
+          <div className="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-4">
+            {PROCESS_STEPS.map((step, i) => (
+              <Reveal key={step.title} delay={i * 0.05}>
+                <SectionMark index={i + 1} total={PROCESS_STEPS.length} label="Krok" />
+                <h3 className="mt-4 font-display text-lg tracking-tight text-ink">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-500">{step.text}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-ink/10 py-20 md:py-28">
+        <div className="container-page">
+          <WeldSeam className="mb-6 w-14 text-red" />
+          <h2 className="max-w-xl font-display text-3xl tracking-tight text-ink">
+            Časté dotazy
+          </h2>
+          <div className="mx-auto mt-12 max-w-2xl divide-y divide-ink/10 border-y border-ink/10">
+            {FAQ_ITEMS.map((item, i) => (
+              <Reveal key={item.question} delay={i * 0.05}>
+                <div className="py-8">
+                  <h3 className="font-display text-base tracking-tight text-ink">
+                    {item.question}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                    {item.answer}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="bg-ink py-20 text-offwhite">
         <div className="container-page flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">

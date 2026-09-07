@@ -28,4 +28,6 @@ next-env.d.ts
 /fotky */
 
 # Claude Code local session files (interní, nepatří do repa)
-.claude/
+# — kromě seo-plan/, ten se commituje spolu s kódem (viz .claude/seo-plan/00-PREHLED.md)
+.claude/*
+!.claude/seo-plan/

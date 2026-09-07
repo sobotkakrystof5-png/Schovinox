@@ -82,6 +82,16 @@ const localBusinessJsonLd = {
     latitude: 50.25906,
     longitude: 15.33393,
   },
+  areaServed: {
+    "@type": "GeoCircle",
+    geoMidpoint: {
+      "@type": "GeoCoordinates",
+      latitude: 50.25906,
+      longitude: 15.33393,
+    },
+    // Vzdálenost sama o sobě nerozhoduje, ale standardní dojezd je do 100 km od Kněžic (potvrzeno klientem).
+    geoRadius: "100000",
+  },
   openingHoursSpecification: SITE.hours.map((h) => ({
     "@type": "OpeningHoursSpecification",
     dayOfWeek: DAY_OF_WEEK_MAP[h.day] ?? [],
